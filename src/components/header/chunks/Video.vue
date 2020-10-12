@@ -1,10 +1,10 @@
 <template>
   <div class="bg-video__container">
-    <video class="bg-video" poster="../assets/video/the-prodigy.jpg" autoplay muted  loop>
-      <source src="../assets/video/the-prodigy.webm" type='video/webm'>
-      <source src="../assets/video/the-prodigy.mp4" type='video/mp4'>
+    <video class="bg-video" poster="../../../assets/video/the-prodigy.jpg" autoplay muted loop>
+      <source src="../../../assets/video/the-prodigy.webm" type='video/webm'>
+      <source src="../../../assets/video/the-prodigy.mp4" type='video/mp4'>
       <p> Your browser doesn't support HTML5 video. Here is a
-        <a target="_blank" href="../assets/video/the-prodigy.mp4">link to the
+        <a target="_blank" href="../../../assets/video/the-prodigy.mp4">link to the
           video</a> instead.
       </p>
     </video>
@@ -18,7 +18,7 @@ name: "Video"
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .bg-video {
   visibility: visible;
   width: auto;
@@ -32,7 +32,7 @@ name: "Video"
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  z-index: -1;
+  z-index: -2;
   &__container {
     position: fixed;
     left: 50%;

@@ -37,11 +37,10 @@ export default {
   name: "Preloader"
 }
 window.onload = function () {
-  document.body.classList.add('loaded_hiding');
-  window.setTimeout(() => {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-  }, 5000);
+  // window.setTimeout(() => {
+  //   document.body.classList.add('loaded');
+  //   document.body.classList.remove('loaded_hiding');
+  // }, 5000);
   document.addEventListener("click", () => {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
