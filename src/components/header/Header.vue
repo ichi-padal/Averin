@@ -66,18 +66,17 @@ header.header {
 
   }
   &__img {
-    fill: $bg-white;
+    fill: $color-white;
     path {
-      fill: $bg-white;
+      fill: $color-white;
     }
     .-in-site &{
-      fill: $bg-black;
+      fill: $color-black;
       path {
-        fill: $bg-black;
+        fill: $color-black;
       }
     }
   }
-
 }
 
 .btn__hamburger {
@@ -90,21 +89,21 @@ header.header {
   height: 54px;
   &__line {
     width: 100%;
-    border-bottom: 3px solid $bg-white;
+    border-bottom: 3px solid $color-white;
     position: relative;
     margin-top: 20px;
     &:after {
       content: '';
-      border-bottom: 3px solid $bg-white;
+      border-bottom: 3px solid $color-white;
       position: absolute;
       top: 10px;
       width: 100%;
       left: 0;
     }
     .-in-site &{
-      border-bottom: 3px solid $bg-black;
+      border-bottom: 3px solid $color-black;
       &:after {
-        border-bottom: 3px solid $bg-black;
+        border-bottom: 3px solid $color-black;
       }
     }
   }

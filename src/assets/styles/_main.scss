@@ -7,6 +7,9 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-size: $global-font-size;
+  font-family: $body-font-family;
+  line-height: $global-line-height;
 }
 
 button {
@@ -30,11 +33,19 @@ button {
 }
 
 h1 {
-  z-index: 200;
-  color: tomato;
-  background-color: $bg-black;
+  font-size: $h1_font-size;
+}
+h2 {
+  font-size: $h2_font-size;
+}
+h3 {
+  font-size: $h3_font-size;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
 
 
 //scroll

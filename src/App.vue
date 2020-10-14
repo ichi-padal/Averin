@@ -1,29 +1,26 @@
 <template>
-  <div class="-in-site" id="app">
-<!--    <Preloader/>-->
-    <Header/>
-    <Burger/>
+  <div id="app">
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 
 <script>
-import Header from "@/components/header/Header";
-// import Preloader from "@/components/Preloader";
-import Burger from "@/components/Burger";
-
+import EmptyLayout from '@/layouts/EmptyLayout'
+import MainLayout from '@/layouts/MainLayout'
 export default {
-  name: 'App',
+  computed: {
+    layout() {
+      return (this.$route.meta.layout || 'empty') + '-layout'
+    }
+  },
   components: {
-    Header,
-    // Preloader,
-    Burger
+    EmptyLayout, MainLayout
   }
-
 }
 </script>
 
 <style lang="scss">
-
-
 
 </style>
