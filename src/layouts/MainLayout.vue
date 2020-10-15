@@ -24,7 +24,8 @@ export default {
     isOpen: true
   }),
   components: {
-    Header, Burger
+    Header,
+    Burger
   }
 }
 </script>

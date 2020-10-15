@@ -31,9 +31,7 @@
             <a href="#" class="">{{link.title}}</a>
           </router-link>
         </ul>
-      </div>
 
-      <div class="burger__menu-sub__wrap">
         <h3 class="burger__title__h3">Regular dentistry</h3>
         <ul class="burger__menu burger__menu-sub">
           <router-link
@@ -48,6 +46,7 @@
           </router-link>
         </ul>
       </div>
+
 
     </nav>
     <div class="burger__img">
@@ -95,7 +94,7 @@ export default {
 
 <style lang="scss">
 .burger {
-  //display: none;
+  display: none;
   background: $color-black;
   position: fixed;
   width: 100vw;
@@ -105,9 +104,11 @@ export default {
   bottom: 0;
   right: 0;
   z-index: 100;
-  display: grid;
   grid-template-columns:  2fr 1fr ;
   padding: 220px 120px 60px;
+  .burger-open & {
+    display: grid;
+  }
   @media print,screen and (max-width: 1366px) {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
@@ -117,10 +118,8 @@ export default {
   &__nav {
     display: grid;
     grid-template-columns: 50% 50% ;
-    grid-template-rows: 40% 60%;
     @media print,screen and (max-width: 1366px) {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 50%;
     }
   }
   &__menu__wrap {
@@ -176,7 +175,7 @@ export default {
     }
     &-sub {
       a {
-        font-size: $global-font-size;
+
       }
     }
   }

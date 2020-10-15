@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header headroom"  :class="{'headroom--unpinned': scrolled}"  v-on="handleScroll">
     <a href="#" class="logo__link">
 
       <svg class="logo__img" width="117" height="67" viewBox="0 0 117 67" xmlns="http://www.w3.org/2000/svg">
@@ -41,8 +41,43 @@ export default {
     msg: String
   },
   components: {
+  },
+
+  data() {
+    return {
+      limitPosition: 500,
+      scrolled: false,
+      lastPosition: 0
+    };
+  },
+  methods: {
+    handleScroll() {
+      if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+        this.scrolled = true;
+        // move up!
+      }
+
+      if (this.lastPosition > window.scrollY) {
+        this.scrolled = false;
+        // move down
+      }
+
+      this.lastPosition = window.scrollY;
+      // this.scrolled = window.scrollY > 250;
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
+
 }
+
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -50,7 +85,6 @@ export default {
 header.header {
   padding: 50px 40px 0 40px;
   position: fixed;
-  top: 20px;
   left: 0;
   width: 100%;
   mix-blend-mode: difference;
@@ -61,19 +95,29 @@ header.header {
   align-items: center;
   background-color: transparent;
 }
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
 .logo{
   &__link {
 
   }
   &__img {
-    fill: $color-white;
+    fill: $color-black;
     path {
-      fill: $color-white;
-    }
-    .-in-site &{
       fill: $color-black;
+    }
+    .burger-open &{
+      fill: $color-white;
       path {
-        fill: $color-black;
+        fill: $color-white;
       }
     }
   }
@@ -89,21 +133,21 @@ header.header {
   height: 54px;
   &__line {
     width: 100%;
-    border-bottom: 3px solid $color-white;
+    border-bottom: 3px solid $color-black;
     position: relative;
     margin-top: 20px;
     &:after {
       content: '';
-      border-bottom: 3px solid $color-white;
+      border-bottom: 3px solid $color-black;
       position: absolute;
       top: 10px;
       width: 100%;
       left: 0;
     }
-    .-in-site &{
-      border-bottom: 3px solid $color-black;
+    .burger-open &{
+      border-bottom: 3px solid $color-white;
       &:after {
-        border-bottom: 3px solid $color-black;
+        border-bottom: 3px solid $color-white;
       }
     }
   }

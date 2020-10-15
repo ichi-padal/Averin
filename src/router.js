@@ -15,6 +15,12 @@ const routes = [
     name: 'profile',
     meta: {layout: 'main'},
     component: () => import('./views/Profile.vue')
+  },
+  {
+    path: '/pages',
+    name: 'pages',
+    meta: {layout: 'main'},
+    component: () => import('./views/Pages.vue')
   }
 
 ]
