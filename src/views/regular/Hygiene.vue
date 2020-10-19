@@ -23,7 +23,7 @@ import Title from "@/components/pages/Title";
 import TextPhoto from "@/components/pages/TextPhoto";
 
 export default {
-name: "Pages",
+name: "Hygiene",
   components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
 }
 

@@ -48,6 +48,7 @@ html, body {
 
 body {
   min-width: 320px;
+  background: $color-white;
 }
 .container {
   width: auto;
@@ -62,6 +63,15 @@ body {
 
   }
 }
+
+.section__pages {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+}
+
 
 button {
   padding: 0;
@@ -90,15 +100,20 @@ button {
 }
 
 .text-right {
-  text-align: right;
+  text-align: right!important;
 }
 .text-center {
-  text-align: center;
+  text-align: center!important;
+}
+.text-left {
+  text-align: left!important;
 }
 
 
 h1 {
   font-size: $h1_font-size;
+  font-family:$title-font-family;
+  font-weight: normal;
 }
 h2 {
   font-size: $h2_font-size;
@@ -106,7 +121,6 @@ h2 {
 h3 {
   font-size: $h3_font-size;
 }
-
 ul {
   padding: 0;
   list-style: none;
@@ -127,3 +141,5 @@ ul {
 //    outline: 1px solid slategrey;
 //  }
 //}
+
+

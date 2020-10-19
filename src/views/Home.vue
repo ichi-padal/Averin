@@ -1,15 +1,23 @@
 <template>
-  <Burger/>
+  <div>
+    <Preloader/>
+    <LoaderClick/>
+    <Video/>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Burger from "@/components/Burger";
+import Preloader from "@/components/Preloader";
+import LoaderClick from "@/components/LoaderClick";
+import Video from "@/components/header/chunks/Video";
 
 export default {
   name: 'Home',
   components: {
-    Burger
+    Video,
+    LoaderClick,
+    Preloader
   }
 }
 </script>

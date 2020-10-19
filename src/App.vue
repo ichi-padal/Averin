@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="-in">
+  <div ref="box" id="app" class="-in">
     <component :is="layout">
       <router-view/>
     </component>
@@ -9,6 +9,8 @@
 <script>
 import EmptyLayout from '@/layouts/EmptyLayout'
 import MainLayout from '@/layouts/MainLayout'
+import SliderLayout from "@/layouts/SliderLayout";
+// import { TimelineLite, Back } from 'gsap'
 export default {
   computed: {
     layout() {
@@ -16,7 +18,7 @@ export default {
     }
   },
   components: {
-    EmptyLayout, MainLayout
+    EmptyLayout, MainLayout, SliderLayout
   }
 }
 </script>

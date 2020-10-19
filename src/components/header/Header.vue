@@ -26,9 +26,15 @@
 
     </a>
 
-    <button class="btn__hamburger" type="button">
+    <button @click.prevent="$emit('burger')" class="btn__hamburger" type="button">
       <span class="btn__hamburger__line"></span>
     </button>
+
+<!--    <div class="hamburger&#45;&#45;spin">-->
+<!--      <div class="hamburger-box">-->
+<!--        <div class="hamburger-inner"></div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </header>
 </template>
@@ -43,7 +49,7 @@ export default {
   components: {
   },
 
-  data() {
+  data()  {
     return {
       limitPosition: 500,
       scrolled: false,
@@ -74,7 +80,12 @@ export default {
   }
 
 }
-
+//
+// let hamburger = document.querySelector(".btn__hamburger");
+//
+// hamburger.addEventListener("click", function() {
+//   this.classList.toggle("is-active");
+// }, false);
 
 
 
@@ -83,8 +94,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 header.header {
-  padding: 50px 40px 0 40px;
+  padding: 1rem 1.5rem;
   position: fixed;
+  top: 1rem;
   left: 0;
   width: 100%;
   mix-blend-mode: difference;
@@ -94,6 +106,15 @@ header.header {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
+  @media print,screen and (min-width: 768px) {
+
+  }
+  @media print,screen and (min-width: 1366px) {
+
+  }
+  @media print,screen and (min-width: 1920px) {
+
+  }
 }
 .headroom {
   will-change: transform;
@@ -107,18 +128,12 @@ header.header {
 }
 .logo{
   &__link {
-
   }
   &__img {
-    fill: $color-black;
+    transition: fill .3s;
+    fill: $color-white;
     path {
-      fill: $color-black;
-    }
-    .burger-open &{
       fill: $color-white;
-      path {
-        fill: $color-white;
-      }
     }
   }
 }
@@ -133,26 +148,36 @@ header.header {
   height: 54px;
   &__line {
     width: 100%;
-    border-bottom: 3px solid $color-black;
+    border-bottom: 3px solid $color-white;
     position: relative;
     margin-top: 20px;
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     &:after {
       content: '';
-      border-bottom: 3px solid $color-black;
+      border-bottom: 3px solid $color-white;
       position: absolute;
       top: 10px;
       width: 100%;
       left: 0;
+      transition: top 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
-    .burger-open &{
-      border-bottom: 3px solid $color-white;
-      &:after {
-        border-bottom: 3px solid $color-white;
+  }
+  .burger__open & {
+    &__line {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &::after {
+        top: 0;
+        transform: rotate(-90deg);
+        transition: bottom, top 0.1s ease-out,
+        transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
 }
-
 
 
 </style>

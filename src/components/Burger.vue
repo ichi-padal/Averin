@@ -1,5 +1,5 @@
 <template>
-  <div class="burger" :class='{open: value}'>
+  <div class="burger">
     <nav class="burger__nav">
       <div class="burger__menu__wrap">
         <h2 class="burger__title__h2">Menu</h2>
@@ -65,24 +65,24 @@ export default {
   props: ['value'],
   data: () => ({
     nav_links: [
-      {title: 'About Us', url: '/', exact: true},
-      {title: 'Safety etiquette', url: '/'},
-      {title: 'Сontacts', url: '/'}
+      {title: 'About Us', url: '/about'},
+      {title: 'Safety etiquette', url: '/safety'},
+      {title: 'Сontacts', url: '/сontacts'}
     ],
     aesthetic_links: [
-      {title: 'Balancing face and smile silhouette', url: '/'},
-      {title: '100 hours of silence and hand-crafting', url: '/'},
-      {title: 'Perfection of the porcelain fit', url: '/'},
-      {title: 'Before/after', url: '/'}
+      {title: 'Balancing face and smile silhouette', url: '/balancingface'},
+      {title: '100 hours of silence and hand-crafting', url: '/handcrafting'},
+      {title: 'Perfection of the porcelain fit', url: '/perfection'},
+      {title: 'Before/after', url: '/before'}
     ],
     regular_links: [
-      {title: 'Hygiene', url: '/'},
-      {title: 'Perio-therapy', url: '/'},
-      {title: 'Restoration', url: '/'},
-      {title: 'Implants', url: '/'},
-      {title: 'Sleep dentistry', url: '/'},
-      {title: 'Endo therapy', url: '/'},
-      {title: 'Invisalign', url: '/'}
+      {title: 'Hygiene', url: '/hygiene'},
+      {title: 'Perio-therapy', url: '/periotherapy'},
+      {title: 'Restoration', url: '/restoration'},
+      {title: 'Implants', url: '/implants'},
+      {title: 'Sleep dentistry', url: '/sleepdentistry'},
+      {title: 'Endo therapy', url: '/endotherapy'},
+      {title: 'Invisalign', url: '/invisalign'}
     ]
   })
 }
@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss">
 .burger {
-  display: none;
+  display: grid;
   background: $color-black;
   position: fixed;
   width: 100vw;
@@ -103,13 +103,19 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 100;
+  z-index: 110;
   grid-template-columns:  2fr 1fr ;
   padding: 220px 120px 60px;
-  .burger-open & {
-    display: grid;
+  -webkit-transition: transform 500ms ease;
+  -moz-transition: transform 500ms ease;
+  -ms-transition: transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  transform: translateX(100%);
+  .burger__open & {
+    transform: translateX(0);
   }
-  @media print,screen and (max-width: 1366px) {
+  @media print,screen and (max-width: 768px) {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
     padding: 150px 90px 10px;
@@ -134,7 +140,6 @@ export default {
   &__img {
     padding: 60px 0;
     img{
-
     }
     @media print,screen and (max-width: 768px) {
       display: none;
