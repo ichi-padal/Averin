@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Title/>
+    <Title :text="pages.titlePage"/>
 
     <Quote/>
 
@@ -25,6 +25,13 @@ import TextPhoto from "@/components/pages/TextPhoto";
 export default {
 name: "BalancingFace",
   components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
+  data() {
+    return {
+      pages: {
+        titlePage: 'Balancing face and smile silhouette'
+      }
+    }
+  }
 }
 
 </script>

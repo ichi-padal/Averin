@@ -1,6 +1,6 @@
 <template>
   <section class="section__pages section__title">
-    <h1>Invisalign</h1>
+    <h1>{{ text }}</h1>
   </section>
 </template>
 

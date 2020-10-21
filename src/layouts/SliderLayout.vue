@@ -1,5 +1,5 @@
 <template>
-  <div class="app-slider-layout">
+  <div :class="{burger__open: isOpen}" class="app-slider-layout">
     <Header @burger="isOpen = !isOpen"/>
     <Burger  v-model="isOpen"/>
     <main class="app-content" >
@@ -13,7 +13,6 @@
 <script>
 import Header from "@/components/header/Header";
 import Burger from "@/components/Burger";
-import Footer from "@/components/Footer";
 
 export default {
   name: 'slider-layout',
@@ -21,8 +20,8 @@ export default {
     isOpen: false
   }),
   components: {
-    Footer,
-    Header
+    Header,
+    Burger
   }
 }
 </script>
