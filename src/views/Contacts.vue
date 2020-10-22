@@ -32,7 +32,7 @@
           <h2 class="form__title color-secondary">Get in <em>touch</em></h2>
           <input class="input__text" type="tel" name="form_phone" required placeholder="Your phone number" pattern="^[0-9-+\s()]*$"  title="Phone number with 7-9 and remaing 9 digit with 0-9">
           <input class="input__text" type="email" name="form_email" required placeholder="Your email adress" title="Your email adress">
-          <div class="button button__white">
+          <div class="button button__contacts button__white">
             <input class="button__input" type="submit" value="Submit">
           </div>
         </form>
@@ -157,8 +157,9 @@ name: "Contacts"
   text-decoration: none;
   position: relative;
   background-color: transparent;
-  padding: 0;
-
+  &__contacts {
+    padding: 0;
+  }
   &:after {
     display: block;
     right: -11%;

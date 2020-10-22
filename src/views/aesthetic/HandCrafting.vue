@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Title/>
+    <Title :TitlePage="TitlePage"/>
 
-    <Quote/>
+    <Quote :QuoteContent="QuoteContent"/>
 
-    <PhotoText/>
+    <PhotoText :PhotoTextContent="PhotoTextContent"/>
 
     <Gallery/>
 
-    <TextPhoto/>
+    <TextPhoto :PhotoTextContent="TextPhotoContent"/>
 
     <Button/>
   </div>
@@ -25,6 +25,35 @@ import TextPhoto from "@/components/pages/TextPhoto";
 export default {
 name: "HandCrafting",
   components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
+  data() {
+    return {
+      TitlePage: '100 hours of silence and hand-crafting',
+      PhotoTextContent: {
+        HalfPhoto: {
+          photoFile: 'woman_3.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: '100 hours of silence and hand-crafting',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+      QuoteContent: {
+        QuoteTitle: 'Intro',
+        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non a viverra varius sed urna, consequat ornare sagittis.'
+      },
+      TextPhotoContent: {
+        HalfPhoto: {
+          photoFile: 'woman_1.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: '111111111111 222222222222222 333333333333333333334 44444444444',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+    }
+  }
 }
 
 </script>

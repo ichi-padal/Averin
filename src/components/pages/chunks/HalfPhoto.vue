@@ -1,15 +1,25 @@
 <template>
   <div class="section__photo-text__photo">
     <picture>
-      <source srcset="~@/assets/img/photo/woman_2.jpg">
-      <img src="~@/assets/img/photo/woman_2.jpg" alt="Photo">
+      <source :srcset="require(`@/assets/img/photo/${HalfPhoto.photoFile}`)">
+      <img :src="require(`@/assets/img/photo/${HalfPhoto.photoFile}`)" :alt="HalfPhoto.photoAlt">
     </picture>
   </div>
 </template>
 
 <script>
 export default {
-name: "HalfPhoto"
+name: "HalfPhoto",
+  props: {
+    HalfPhoto: {
+      photoFile: {
+        default: 'woman_2.jpg'
+      },
+      photoAlt: {
+        default: 'Default photo'
+      }
+    }
+  }
 }
 </script>
 

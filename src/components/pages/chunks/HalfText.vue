@@ -2,10 +2,10 @@
   <div class="section__photo-text__text">
     <div class="photo-text__text__center">
       <h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        {{HalfText.title}}
       </h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.
+        {{HalfText.text}}
       </p>
     </div>
   </div>
@@ -13,7 +13,17 @@
 
 <script>
 export default {
-name: "HalfText"
+name: "HalfText",
+  props: {
+    HalfText: {
+      title: {
+        default: 'woman_2.jpg'
+      },
+      text: {
+        default: 'Default photo'
+      }
+    }
+  }
 }
 </script>
 

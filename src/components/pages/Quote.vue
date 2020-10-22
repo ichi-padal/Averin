@@ -1,15 +1,27 @@
 <template>
   <section class="section__pages section__intro">
     <blockquote class="quote">
-      <h4 class="quote__intro">Intro</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary">Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt.</p>
+      <h4 class="quote__intro">{{QuoteContent.QuoteTitle}}</h4>
+      <p>
+        {{QuoteContent.QuoteText}}
+      </p>
     </blockquote>
   </section>
 </template>
 
 <script>
 export default {
-name: "Quote"
+name: "Quote",
+  props: {
+    QuoteContent: {
+      QuoteTitle: {
+        default: 'Title undefined'
+      },
+      QuoteText: {
+        default: 'text undefined'
+      },
+    }
+  },
 }
 </script>
 
@@ -34,6 +46,7 @@ name: "Quote"
   p {
     font-size: $h2-font-size;
     margin: 0;
+    font-family: $title-font-family;
   }
 }
 </style>

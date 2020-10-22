@@ -1,7 +1,7 @@
 <template>
   <section class="section__pages section__photo-text">
-    <HalfPhoto/>
-    <HalfText class="bg-grey"/>
+    <HalfPhoto :half-photo="PhotoTextContent.HalfPhoto"/>
+    <HalfText :half-text="PhotoTextContent.HalfText" class="bg-grey"/>
   </section>
 </template>
 
@@ -11,6 +11,11 @@ import HalfText from "@/components/pages/chunks/HalfText";
 export default {
 name: "Photo-text",
   components: {HalfText, HalfPhoto},
+  props: {
+    PhotoTextContent: {
+
+    }
+  }
 }
 </script>
 

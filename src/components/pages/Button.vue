@@ -25,6 +25,9 @@ name: "Button",
   text-decoration: none;
   position: relative;
   background-color: transparent;
+  &__contacts {
+    padding: 0;
+  }
   &:after {
     right: -11%;
     top: calc(50% - 0.2rem);

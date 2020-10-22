@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Title :text="pages.titlePage"/>
+    <Title :TitlePage="TitlePage"/>
 
-    <Quote/>
+    <Quote :QuoteContent="QuoteContent"/>
 
-    <PhotoText/>
+    <PhotoText :PhotoTextContent="PhotoTextContent"/>
 
     <Gallery/>
 
-    <TextPhoto/>
+    <TextPhoto :PhotoTextContent="TextPhotoContent"/>
 
     <Button/>
   </div>
@@ -27,9 +27,31 @@ name: "BalancingFace",
   components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
   data() {
     return {
-      pages: {
-        titlePage: 'Balancing face and smile silhouette'
-      }
+      TitlePage: 'Balancing face and smile silhouette',
+      PhotoTextContent: {
+        HalfPhoto: {
+          photoFile: 'woman_2.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: 'Balancing face and smile silhouette',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+      QuoteContent: {
+        QuoteTitle: 'Intro',
+        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.<span/> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
+      },
+      TextPhotoContent: {
+        HalfPhoto: {
+          photoFile: 'woman_4.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: 'Balancing face qqqqqqqqqqq',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
     }
   }
 }
