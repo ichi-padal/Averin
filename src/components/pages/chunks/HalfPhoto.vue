@@ -1,8 +1,8 @@
 <template>
   <div class="section__photo-text__photo">
     <picture>
-      <source srcset="~@/assets/img/photo/women_2.jpg">
-      <img src="~@/assets/img/photo/women_2.jpg" alt="Photo">
+      <source srcset="~@/assets/img/photo/woman_2.jpg">
+      <img src="~@/assets/img/photo/woman_2.jpg" alt="Photo">
     </picture>
   </div>
 </template>

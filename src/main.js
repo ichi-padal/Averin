@@ -4,14 +4,15 @@ import router from './router'
 
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-
-
 gsap.registerPlugin(ScrollTrigger);
-Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
 
 Vue.config.productionTip = false
-Vue.use(window.VueAwesomeSwiper)
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 new Vue({
   router,
   render: h => h(App)
