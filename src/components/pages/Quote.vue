@@ -2,8 +2,7 @@
   <section class="section__pages section__intro">
     <blockquote class="quote">
       <h4 class="quote__intro">{{QuoteContent.QuoteTitle}}</h4>
-      <p>
-        {{QuoteContent.QuoteText}}
+      <p v-html="QuoteContent.QuoteText">
       </p>
     </blockquote>
   </section>

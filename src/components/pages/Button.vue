@@ -1,12 +1,17 @@
 <template>
   <div class="section__button">
-    <a class="button button__dark" href="#">all procedures</a>
+    <a class="button button__dark" href="#">{{ButtonTitle}}</a>
   </div>
 </template>
 
 <script>
 export default {
 name: "Button",
+  props: {
+    ButtonTitle: {
+      default: 'Button Title'
+    }
+  }
 }
 </script>
 

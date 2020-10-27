@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <GalleryBody/>
+    <GalleryBody :galleryImg="Gallery.GalleryImg"/>
 
 
   </section>
@@ -33,6 +33,11 @@ import GalleryBody from "@/components/pages/chunks/GalleryBody";
 export default {
   name: "Gallery",
   components: {GalleryBody},
+  props: {
+    Gallery: {
+
+    }
+  }
 }
 
 </script>
@@ -43,6 +48,7 @@ export default {
   flex-direction: column;
   align-items: normal;
   justify-content: normal;
+  //align-items: flex-end;
 }
 .gallery {
   &__header {

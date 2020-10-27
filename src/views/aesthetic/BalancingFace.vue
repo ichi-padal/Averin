@@ -6,11 +6,11 @@
 
     <PhotoText :PhotoTextContent="PhotoTextContent"/>
 
-    <Gallery/>
+    <Gallery :Gallery="Gallery"/>
 
     <TextPhoto :PhotoTextContent="TextPhotoContent"/>
 
-    <Button/>
+    <Button :ButtonTitle="ButtonTitle"/>
   </div>
 </template>
 
@@ -40,7 +40,10 @@ name: "BalancingFace",
       },
       QuoteContent: {
         QuoteTitle: 'Intro',
-        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.<span/> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
+        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
+      },
+      Gallery: {
+        GalleryImg: ['woman_1.jpg', 'woman_2.jpg', 'woman_3.jpg', 'woman_4.jpg', 'woman_5.jpg', 'photo_2020-09-04_13-18-04.jpg']
       },
       TextPhotoContent: {
         HalfPhoto: {
@@ -52,6 +55,7 @@ name: "BalancingFace",
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
         }
       },
+      ButtonTitle: 'all procedures'
     }
   }
 }
