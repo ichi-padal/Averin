@@ -30,15 +30,9 @@ import {gsap} from "gsap/dist/gsap";
 export default {
   name: "Preloader"
 }
+
 window.onload = function () {
-  document.body.classList.add('preloaded_hiding');
   document.body.classList.add('preloaded');
-  window.setTimeout(function () {
-    document.body.classList.add('preloaded');
-    document.body.classList.remove('preloaded_hiding');
-  }, 1000);
-
-
   let tl = gsap.timeline();
   tl.from('.preloader__image path', {x: 15, stagger: 0.03, duration: 0.8})
   tl.call(backOut)
@@ -46,7 +40,11 @@ window.onload = function () {
   function backOut() {
     tl.reverse();
   }
+  window.setTimeout(function () {
+    document.body.classList.add('preloaded_hiding');
+    document.body.classList.remove('preloaded');
 
+  }, 3000);
 }
 
 
@@ -63,14 +61,15 @@ window.onload = function () {
   overflow: hidden;
   background: $color-black;;
   z-index: 1005;
+  display: none;
   &__image {
     position: relative;
     top: 50%;
     left: 50%;
     width: 323px;
     height: 183px;
-    margin-top: -35px;
-    margin-left: -35px;
+    margin-top: -95px;
+    margin-left: -160px;
     text-align: center;
     overflow: visible;
   }
@@ -79,7 +78,7 @@ window.onload = function () {
     opacity: 0;
   }
   .preloaded &{
-    display: none;
+    display: flex;
   }
 }
 @keyframes preloader-rotate {

@@ -27,17 +27,19 @@ document.addEventListener("click", () => {
   overflow: hidden;
   background: $color-black;;
   z-index: 1002;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   opacity: 0;
+  transition: 0.5s;
   .preloaded_hiding &{
     transition: 0.3s opacity;
     opacity: 1;
     display: flex;
   }
   .preloaded &{
-    display: none;
+    display: flex;
+    opacity: 1;
   }
 
 
