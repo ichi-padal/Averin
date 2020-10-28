@@ -7,8 +7,20 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    meta: {layout: 'main'},
+    meta: {layout: 'slider'},
     component: () => import('./views/Home.vue')
+  },
+  {
+    path: '/aesthetic',
+    name: 'Aesthetic',
+    meta: {layout: 'slider'},
+    component: () => import('./views/aesthetic/Aesthetic.vue')
+  },
+  {
+    path: '/regular',
+    name: 'Regular',
+    meta: {layout: 'slider'},
+    component: () => import('./views/regular/Regular.vue')
   },
   {
     path: '/about',

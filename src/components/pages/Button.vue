@@ -1,6 +1,6 @@
 <template>
   <div class="section__button">
-    <a class="button button__dark" href="#">{{ButtonTitle}}</a>
+    <a class="button button__dark" :href="ButtonTitle.url">{{ButtonTitle.title}}</a>
   </div>
 </template>
 
@@ -9,7 +9,12 @@ export default {
 name: "Button",
   props: {
     ButtonTitle: {
-      default: 'Button Title'
+      title: {
+        default: 'Button Title'
+      },
+      url: {
+        default: '/'
+      }
     }
   }
 }
@@ -20,6 +25,7 @@ name: "Button",
   display: flex;
   justify-content: center;
   padding: 4rem ;
+  background-color: $color-white;
 }
 .button {
   display: inline-flex;

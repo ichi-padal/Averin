@@ -18,7 +18,9 @@
       </div>
 
       <div class="burger__menu-sub__wrap">
-        <h3 class="burger__title__h3">Aesthetic dentistry</h3>
+        <h3 class="burger__title__h3">
+          <router-link to="/aesthetic">Aesthetic dentistry</router-link>
+        </h3>
         <ul class="burger__menu burger__menu-sub">
           <router-link
               v-for="link in aesthetic_links"
@@ -32,7 +34,9 @@
           </router-link>
         </ul>
 
-        <h3 class="burger__title__h3">Regular dentistry</h3>
+        <h3 class="burger__title__h3">
+          <router-link to="/regular">Regular dentistry</router-link>
+        </h3>
         <ul class="burger__menu burger__menu-sub">
           <router-link
               v-for="link in regular_links"
@@ -65,7 +69,7 @@ export default {
   props: ['value'],
   data: () => ({
     nav_links: [
-      {title: 'About Us', url: '/about'},
+      {title: 'About Us', url: '/about', exact: true},
       {title: 'Safety etiquette', url: '/safety'},
       {title: 'Сontacts', url: '/сontacts'}
     ],
@@ -157,6 +161,19 @@ export default {
       font-weight: bold;
       color: $color-white;
       font-style: normal;
+      a {
+        color: $color-white;
+        text-decoration: none;
+        &:hover {
+          color: $color-secondary;
+        }
+        &:active {
+          color: $color-secondary;
+        }
+        &.active {
+          color: $color-secondary;
+        }
+      }
     }
   }
   &__menu {

@@ -55,7 +55,10 @@ name: "BalancingFace",
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
         }
       },
-      ButtonTitle: 'all procedures'
+      ButtonTitle: {
+        title: 'all procedures',
+        url: '/aesthetic'
+      }
     }
   }
 }
