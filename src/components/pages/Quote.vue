@@ -1,14 +1,16 @@
 <template>
-  <section class="section__pages section__intro">
-    <blockquote class="quote">
-      <h4 class="quote__intro">{{QuoteContent.QuoteTitle}}</h4>
-      <p v-html="QuoteContent.QuoteText">
+  <section  class="section__pages section__intro">
+    <blockquote class="quote animate_up">
+      <h4 v-scrollanimation class="quote__intro">{{QuoteContent.QuoteTitle}}</h4>
+      <p v-scrollanimation v-html="QuoteContent.QuoteText">
       </p>
     </blockquote>
   </section>
 </template>
 
 <script>
+
+
 export default {
 name: "Quote",
   props: {
@@ -47,5 +49,15 @@ name: "Quote",
     margin: 0;
     font-family: $title-font-family;
   }
+}
+
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+.enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
