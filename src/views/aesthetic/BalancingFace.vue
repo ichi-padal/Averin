@@ -1,0 +1,140 @@
+<template>
+  <div>
+    <Title :TitlePage="TitlePage"/>
+
+    <Quote :QuoteContent="QuoteContent"/>
+
+    <PhotoText :PhotoTextContent="PhotoTextContent"/>
+
+    <Gallery :Gallery="Gallery"/>
+
+    <TextPhoto :PhotoTextContent="TextPhotoContent"/>
+
+    <Button :ButtonTitle="ButtonTitle"/>
+  </div>
+</template>
+
+<script>
+import Button from "@/components/pages/Button";
+import Gallery from "@/components/pages/Gallery";
+import PhotoText from "@/components/pages/PhotoText";
+import Quote from "@/components/pages/Quote";
+import Title from "@/components/pages/Title";
+import TextPhoto from "@/components/pages/TextPhoto";
+import {gsap} from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+export default {
+name: "BalancingFace",
+  components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
+  data() {
+    return {
+      TitlePage: 'Balancing face and smile silhouette',
+      PhotoTextContent: {
+        HalfPhoto: {
+          photoFile: 'woman_2.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: 'Balancing face and smile silhouette',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+      QuoteContent: {
+        QuoteTitle: 'Intro',
+        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
+      },
+      Gallery: {
+        GalleryImg: ['woman_1.jpg', 'woman_2.jpg', 'woman_3.jpg', 'woman_4.jpg', 'woman_5.jpg', 'photo_2020-09-04_13-18-04.jpg']
+      },
+      TextPhotoContent: {
+        HalfPhoto: {
+          photoFile: 'woman_4.jpg',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: 'Balancing face qqqqqqqqqqq',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+      ButtonTitle: {
+        title: 'all procedures',
+        url: '/aesthetic'
+      }
+    }
+  },
+
+
+
+
+
+  // working one element
+  // mounted: function() {
+  //   this.scrollAnimation();
+  // },
+  // methods: {
+  //   scrollAnimation() {
+  //     gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: ".animate_up",
+  //         start: "-150% center",
+  //         end: "bottom center",
+  //         markers: true,
+  //         overwrite: "auto"
+  //       }
+  //     })
+  //       .from(".animate_up", {y: 500, opacity: 0, duration: 1.5})
+  //   }
+  // }
+
+  mounted() {
+    function animateFrom(elem, direction) {
+      direction = direction | 1;
+      var x = 0,
+          y = direction * 200;
+      gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+        duration: 1.5,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: "ease",
+        overwrite: "auto"
+      });
+    }
+    function hide(elem) {
+      gsap.set(elem, {autoAlpha: 0});
+    }
+    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+      hide(elem); // assure that the element is hidden when scrolled into view
+
+      ScrollTrigger.create({
+        trigger: elem,
+        start: "-150% center",
+        end: "bottom center",
+        onEnter: function() { animateFrom(elem) },
+        // onEnterBack: function() { animateFrom(elem, -1) },
+        // onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+      });
+    });
+
+  }
+}
+
+
+
+
+
+
+
+</script>
+
+<style lang="scss">
+
+.gs_reveal {
+  opacity: 1;
+  visibility: hidden;
+  transition: transform 0s;
+}
+
+</style>

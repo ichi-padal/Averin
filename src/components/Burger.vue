@@ -1,5 +1,5 @@
 <template>
-  <div class="burger" :class='{open: value}'>
+  <div class="burger">
     <nav class="burger__nav">
       <div class="burger__menu__wrap">
         <h2 class="burger__title__h2">Menu</h2>
@@ -18,7 +18,9 @@
       </div>
 
       <div class="burger__menu-sub__wrap">
-        <h3 class="burger__title__h3">Aesthetic dentistry</h3>
+        <h3 class="burger__title__h3">
+          <router-link to="/aesthetic">Aesthetic dentistry</router-link>
+        </h3>
         <ul class="burger__menu burger__menu-sub">
           <router-link
               v-for="link in aesthetic_links"
@@ -31,10 +33,10 @@
             <a href="#" class="">{{link.title}}</a>
           </router-link>
         </ul>
-      </div>
 
-      <div class="burger__menu-sub__wrap">
-        <h3 class="burger__title__h3">Regular dentistry</h3>
+        <h3 class="burger__title__h3">
+          <router-link to="/regular">Regular dentistry</router-link>
+        </h3>
         <ul class="burger__menu burger__menu-sub">
           <router-link
               v-for="link in regular_links"
@@ -48,6 +50,7 @@
           </router-link>
         </ul>
       </div>
+
 
     </nav>
     <div class="burger__img">
@@ -66,24 +69,24 @@ export default {
   props: ['value'],
   data: () => ({
     nav_links: [
-      {title: 'About Us', url: '/', exact: true},
-      {title: 'Safety etiquette', url: '/'},
-      {title: 'Сontacts', url: '/'}
+      {title: 'About Us', url: '/about', exact: true},
+      {title: 'Safety etiquette', url: '/safety'},
+      {title: 'Сontacts', url: '/сontacts'}
     ],
     aesthetic_links: [
-      {title: 'Balancing face and smile silhouette', url: '/'},
-      {title: '100 hours of silence and hand-crafting', url: '/'},
-      {title: 'Perfection of the porcelain fit', url: '/'},
-      {title: 'Before/after', url: '/'}
+      {title: 'Balancing face and smile silhouette', url: '/balancingface'},
+      {title: '100 hours of silence and hand-crafting', url: '/handcrafting'},
+      {title: 'Perfection of the porcelain fit', url: '/perfection'},
+      {title: 'Before/after', url: '/before'}
     ],
     regular_links: [
-      {title: 'Hygiene', url: '/'},
-      {title: 'Perio-therapy', url: '/'},
-      {title: 'Restoration', url: '/'},
-      {title: 'Implants', url: '/'},
-      {title: 'Sleep dentistry', url: '/'},
-      {title: 'Endo therapy', url: '/'},
-      {title: 'Invisalign', url: '/'}
+      {title: 'Hygiene', url: '/hygiene'},
+      {title: 'Perio-therapy', url: '/periotherapy'},
+      {title: 'Restoration', url: '/restoration'},
+      {title: 'Implants', url: '/implants'},
+      {title: 'Sleep dentistry', url: '/sleepdentistry'},
+      {title: 'Endo therapy', url: '/endotherapy'},
+      {title: 'Invisalign', url: '/invisalign'}
     ]
   })
 }
@@ -95,7 +98,7 @@ export default {
 
 <style lang="scss">
 .burger {
-  //display: none;
+  display: grid;
   background: $color-black;
   position: fixed;
   width: 100vw;
@@ -104,11 +107,19 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 100;
-  display: grid;
+  z-index: 110;
   grid-template-columns:  2fr 1fr ;
   padding: 220px 120px 60px;
-  @media print,screen and (max-width: 1366px) {
+  -webkit-transition: transform 500ms ease;
+  -moz-transition: transform 500ms ease;
+  -ms-transition: transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  transform: translateX(100%);
+  .burger__open & {
+    transform: translateX(0);
+  }
+  @media print,screen and (max-width: 768px) {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
     padding: 150px 90px 10px;
@@ -117,10 +128,8 @@ export default {
   &__nav {
     display: grid;
     grid-template-columns: 50% 50% ;
-    grid-template-rows: 40% 60%;
     @media print,screen and (max-width: 1366px) {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 50%;
     }
   }
   &__menu__wrap {
@@ -135,7 +144,6 @@ export default {
   &__img {
     padding: 60px 0;
     img{
-
     }
     @media print,screen and (max-width: 768px) {
       display: none;
@@ -153,6 +161,19 @@ export default {
       font-weight: bold;
       color: $color-white;
       font-style: normal;
+      a {
+        color: $color-white;
+        text-decoration: none;
+        &:hover {
+          color: $color-secondary;
+        }
+        &:active {
+          color: $color-secondary;
+        }
+        &.active {
+          color: $color-secondary;
+        }
+      }
     }
   }
   &__menu {
@@ -176,7 +197,7 @@ export default {
     }
     &-sub {
       a {
-        font-size: $global-font-size;
+
       }
     }
   }

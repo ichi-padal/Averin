@@ -1,7 +1,9 @@
 //Global
 $color-black: #000000;
+$color-light-black: #1B1B1B;
 $color-white: #ffffff;
-$color-secondary: #FF8500;;
+$color-light-grey: #F2F2F2;
+$color-secondary: #FF8500;
 
 
 
@@ -9,11 +11,16 @@ $color-secondary: #FF8500;;
 
 //Typography
 $body-font-family: Arial Narrow, san-serif;
+$title-font-family:  Ogg Roman, sans-serif;
+$title-italic-font-family:  Ogg Italic, sans-serif;
 $global-line-height: 1.5;
-$global-font-size: 30px;
+$global-font-size-full-size: 30px;
+$global-font-size-desktop: 21px;
+$global-font-size-tablet: 18px;
+$global-font-size-mobile: 14px;
 $h1-font-size: 6.6rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.3rem;
-$h4-font-size: 24px;
-$h5-font-size: 20px;
-$h6-font-size: 18px;
+$h4-font-size: 1rem;
+$h5-font-size: 0.8rem;
+$h6-font-size: 0.6rem;

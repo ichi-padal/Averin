@@ -1,7 +1,6 @@
 <template>
-  <header class="header">
-    <a href="#" class="logo__link">
-
+  <header class="header headroom"  :class="{'headroom--unpinned': scrolled}"  v-on="handleScroll">
+    <router-link to="/" class="logo__link">
       <svg class="logo__img" width="117" height="67" viewBox="0 0 117 67" xmlns="http://www.w3.org/2000/svg">
         <path d="M31.3095 27.2933C33.1869 26.1669 36.2211 23.5387 37.3789 22.4752L37.1911 22.2561C36.1272 23.4138 33.0928 25.5409 32.1542 25.8849C31.5596 25.6657 31.028 25.3846 30.903 24.8529C30.8092 24.384 30.4961 23.007 30.8401 20.7857L31.4347 16.7814C33.5308 16.8757 35.3451 16.9377 36.7527 16.9377C38.0355 16.9377 38.63 17.0006 39.5057 16.8443C40.2567 16.7499 41.9773 15.2176 41.3831 15.2176C40.6321 15.1862 39.0679 15.1548 37.5974 15.1548C36.1271 15.1548 34.0939 15.1548 31.7163 15.1233C32.3735 11.119 33.2492 6.14544 33.9062 2.89206H34.3755C36.096 2.89206 42.6342 3.70495 43.6663 3.45437C44.4487 2.95404 45.0118 1.95344 45.0118 1.48369C44.7303 1.39024 44.2295 1.39024 44.0108 1.39024C42.5713 1.39024 38.098 1.60942 32.0917 1.60942H26.3978C25.0528 1.60942 21.7993 1.60942 21.2986 1.85911C21.0798 2.2346 18.9839 4.08043 19.5781 4.08043C20.235 4.08043 22.9252 3.48583 26.273 3.07977C28.0246 2.92257 29.9956 2.86059 31.6224 2.86059L21.4865 15.0298C17.2321 14.9354 13.4779 14.9354 11.3508 14.9354C6.34544 14.9354 2.37211 18.0019 0.620224 20.6607C-1.19427 23.2889 1.05864 29.264 6.25162 29.264C9.34869 29.264 10.9439 28.0433 16.4186 21.8806C16.8879 21.4117 18.7023 19.1904 21.1111 16.2182C23.9894 16.3753 26.8674 16.5622 29.5265 16.6879C29.1824 18.4395 28.9633 19.9413 28.807 20.9734C28.4626 23.0698 28.6502 23.8513 28.7442 25.072C28.7755 25.6657 29.0886 26.6672 29.8392 27.2618C29.9958 27.4181 30.9655 27.4496 31.3095 27.2933ZM15.8241 21.912C10.287 28.2004 9.84896 28.1062 8.03471 28.1062C3.52971 28.1062 1.34011 23.3195 2.74766 20.2538C4.09285 17.1253 6.0011 15.7178 9.50494 15.7178C12.1327 15.7178 16.1995 15.9369 20.6107 16.1875C18.4518 18.7215 16.7941 20.8799 15.8241 21.912ZM29.8081 15.1232L22.0182 15.0298L32.1543 2.92257C31.5912 5.55078 30.5585 10.7434 29.8081 15.1232Z" fill="white"/>
         <path d="M46.4734 27.3238C49.602 24.7279 52.386 22.194 54.6388 20.0347C56.4842 18.2831 59.1435 15.5301 59.2373 13.8099C59.3311 12.4644 58.0799 10.994 57.2351 11.4009C55.7647 12.1518 53.5439 13.5594 52.3236 14.7791L52.4489 14.9049C53.6688 13.9034 55.1076 13.0276 55.89 12.8085C56.6409 13.0276 57.0788 13.9977 57.0788 14.8735C57.0788 16.2496 56.4218 17.8448 54.4195 19.847C52.2612 22.0063 49.3518 24.6022 47.7246 25.9477H47.6937C47.0991 25.9477 46.8804 25.3531 46.8489 25.1034C47.5999 21.7557 48.5385 16.5621 48.4446 15.0927C48.3193 12.1833 47.3182 10.7749 45.8478 11.5572C44.3775 12.371 42.4692 13.8099 41.3742 14.9049L41.531 15.0297C42.532 14.1225 44.0649 13.1839 44.659 13.0276C45.2537 13.059 45.9732 13.8405 46.0041 15.8426C46.0041 17.8762 44.8783 23.5386 44.2837 26.3546C44.2837 27.136 45.4414 27.5429 45.7854 27.5429C46.0041 27.543 46.2547 27.543 46.4734 27.3238Z" fill="white"/>
@@ -23,12 +22,17 @@
         <path d="M84.0123 51.8657H84.449C84.6156 51.8657 84.6156 51.6785 84.449 51.6785C83.8668 51.6785 82.4111 51.7408 82.0991 51.7408C81.8289 51.7408 80.2899 51.6785 79.7284 51.6785C79.5619 51.6785 79.5619 51.8657 79.7284 51.8657H80.1652C81.1841 51.8657 81.2882 51.9696 81.2882 57.0648V60.7042C81.2882 65.7994 81.1842 65.9035 80.1652 65.9035H79.7284C79.5619 65.9035 79.5619 66.0905 79.7284 66.0905C80.2899 66.0905 81.8289 66.0282 82.0991 66.0282C82.4111 66.0282 83.8668 66.0905 84.449 66.0905C84.6156 66.0905 84.6156 65.9035 84.449 65.9035H84.0123C82.9933 65.9035 82.8893 65.7995 82.8893 60.7042V57.0648C82.8893 51.9696 82.9933 51.8657 84.0123 51.8657Z" fill="white"/>
         <path d="M93.7452 66.0906C89.9599 66.0906 87.7765 63.1582 87.7765 58.8949C87.7765 54.6315 90.168 51.6784 93.9115 51.6784C97.1349 51.6784 98.7779 53.6125 99.1107 56.9193H99.298L99.0481 52.3855C97.9251 51.8864 95.5959 51.4703 93.87 51.4703C89.6065 51.4703 85.9048 54.5483 85.9048 58.8948C85.9048 63.1374 89.3156 66.2985 93.7867 66.2985C96.0327 66.2985 97.9459 65.8825 99.0899 65.3833L99.3394 60.5378H99.1729C98.8401 63.886 97.2182 66.0906 93.7452 66.0906Z" fill="white"/>
       </svg>
+    </router-link>
 
-    </a>
-
-    <button class="btn__hamburger" type="button">
+    <button @click.prevent="$emit('burger')" class="btn__hamburger" type="button">
       <span class="btn__hamburger__line"></span>
     </button>
+
+<!--    <div class="hamburger&#45;&#45;spin">-->
+<!--      <div class="hamburger-box">-->
+<!--        <div class="hamburger-inner"></div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </header>
 </template>
@@ -41,40 +45,92 @@ export default {
     msg: String
   },
   components: {
+  },
+
+  data()  {
+    return {
+      limitPosition: 500,
+      scrolled: false,
+      lastPosition: 0
+    };
+  },
+  methods: {
+    handleScroll() {
+      if (this.lastPosition < window.scrollY && this.limitPosition < window.scrollY) {
+        this.scrolled = true;
+        // move up!
+      }
+
+      if (this.lastPosition > window.scrollY) {
+        this.scrolled = false;
+        // move down
+      }
+
+      this.lastPosition = window.scrollY;
+      // this.scrolled = window.scrollY > 250;
+    }
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
+
 }
+//
+// let hamburger = document.querySelector(".btn__hamburger");
+//
+// hamburger.addEventListener("click", function() {
+//   this.classList.toggle("is-active");
+// }, false);
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 header.header {
-  padding: 50px 40px 0 40px;
+  padding: 1rem 1.5rem;
   position: fixed;
-  top: 20px;
+  top: 1rem;
   left: 0;
   width: 100%;
   mix-blend-mode: difference;
-  pointer-events: none;
   z-index: 113;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
+  @media print,screen and (min-width: 768px) {
+
+  }
+  @media print,screen and (min-width: 1366px) {
+
+  }
+  @media print,screen and (min-width: 1920px) {
+
+  }
+}
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
 }
 .logo{
   &__link {
-
   }
   &__img {
+    transition: fill .3s;
     fill: $color-white;
     path {
       fill: $color-white;
-    }
-    .-in-site &{
-      fill: $color-black;
-      path {
-        fill: $color-black;
-      }
     }
   }
 }
@@ -92,6 +148,8 @@ header.header {
     border-bottom: 3px solid $color-white;
     position: relative;
     margin-top: 20px;
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     &:after {
       content: '';
       border-bottom: 3px solid $color-white;
@@ -99,16 +157,24 @@ header.header {
       top: 10px;
       width: 100%;
       left: 0;
+      transition: top 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
-    .-in-site &{
-      border-bottom: 3px solid $color-black;
-      &:after {
-        border-bottom: 3px solid $color-black;
+  }
+  .burger__open & {
+    &__line {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &::after {
+        top: 0;
+        transform: rotate(-90deg);
+        transition: bottom, top 0.1s ease-out,
+        transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     }
   }
 }
-
 
 
 </style>

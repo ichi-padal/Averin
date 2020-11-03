@@ -1,5 +1,5 @@
 <template>
-  <div :class="{burger__open: isOpen}" class="app-main-layout">
+  <div :class="{burger__open: isOpen}" class="app-slider-layout">
     <Header @burger="isOpen = !isOpen"/>
     <Burger  v-model="isOpen"/>
     <main class="app-content" >
@@ -7,41 +7,27 @@
         <router-view />
       </div>
     </main>
-
-    <Footer/>
-
   </div>
 </template>
 
 <script>
 import Header from "@/components/header/Header";
 import Burger from "@/components/Burger";
-import Footer from "@/components/Footer";
 
 export default {
-  name: 'main-layout',
+  name: 'slider-layout',
   data: () => ({
     isOpen: false
   }),
-  watch: {
-    '$route': {
-      deep: true,
-      handler () {
-        this.isOpen = false;
-      }
-    }
-  },
   components: {
-    Footer,
     Header,
     Burger
   }
 }
-
 </script>
 
 <style lang="scss">
-.app-main-layout {
+.app-slider-layout {
   overflow: hidden;
   min-height: 100vh;
   display: flex;

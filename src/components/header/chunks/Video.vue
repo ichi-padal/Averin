@@ -44,6 +44,7 @@ name: "Video"
     margin: 0 auto;
     -webkit-transform-origin: center;
     transform-origin: center;
+    z-index: -2;
   }
 }
 </style>

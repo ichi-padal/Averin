@@ -1,4 +1,29 @@
-
+//fonts
+@mixin font-face($style-name, $file, $category:"") {
+  $filepath: "~@/assets/fonts/" + $file + "/"  + $file;
+  @font-face {
+    font-family: "#{$style-name}";
+    src: url($filepath + ".eot");
+    src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype');
+  }
+  %#{$style-name} {
+    font: {
+      @if $category != "" {
+        family: "#{$style-name}", #{$category};
+      }
+      @else {
+        family: "#{$style-name}";
+        weight: normal;
+      }
+    }
+  }
+};
+@include font-face('Arial Narrow', 'arial-narrow', 'sans-serif');
+@include font-face('Arial Narrow Bold', 'arial-narrow-bold', 'sans-serif');
+@include font-face('Arial Narrow Italic', 'arial-narrow-italic', 'sans-serif');
+@include font-face('Arial Narrow Bold Italic', 'arial-narrow-bold-italic', 'sans-serif');
+@include font-face('Ogg Roman', 'ogg-roman', 'serif');
+@include font-face('Ogg Italic', 'ogg-italic', 'serif');
 
 //global
 * , ::after, ::before {
@@ -7,10 +32,46 @@
 html, body {
   padding: 0;
   margin: 0;
-  font-size: $global-font-size;
+  font-size: $global-font-size-mobile;
   font-family: $body-font-family;
   line-height: $global-line-height;
+  @media print,screen and (min-width: 768px) {
+    font-size: $global-font-size-tablet;
+  }
+  @media print,screen and (min-width: 1366px) {
+    font-size: $global-font-size-desktop;
+  }
+  @media print,screen and (min-width: 1920px) {
+    font-size: $global-font-size-full-size;
+  }
 }
+
+body {
+  min-width: 320px;
+  background: $color-white;
+}
+.container {
+  width: auto;
+  padding: 0 15px;
+  @media print,screen and (min-width: 768px) {
+
+  }
+  @media print,screen and (min-width: 1366px) {
+
+  }
+  @media print,screen and (min-width: 1920px) {
+
+  }
+}
+
+.section__pages {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+}
+
 
 button {
   padding: 0;
@@ -32,8 +93,27 @@ button {
   border-radius: 0;
 }
 
+
+
+.color-secondary {
+  color: $color-secondary;
+}
+
+.text-right {
+  text-align: right!important;
+}
+.text-center {
+  text-align: center!important;
+}
+.text-left {
+  text-align: left!important;
+}
+
+
 h1 {
   font-size: $h1_font-size;
+  font-family:$title-font-family;
+  font-weight: normal;
 }
 h2 {
   font-size: $h2_font-size;
@@ -41,7 +121,6 @@ h2 {
 h3 {
   font-size: $h3_font-size;
 }
-
 ul {
   padding: 0;
   list-style: none;
@@ -49,16 +128,18 @@ ul {
 
 
 //scroll
-body {
-  color: aliceblue;
-  &::-webkit-scrollbar {
-    width: 1em;
-  }
-  &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-  }
-}
+//body {
+//  color: aliceblue;
+//  &::-webkit-scrollbar {
+//    width: 1em;
+//  }
+//  &::-webkit-scrollbar-track {
+//    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//  }
+//  &::-webkit-scrollbar-thumb {
+//    background-color: darkgrey;
+//    outline: 1px solid slategrey;
+//  }
+//}
+
+
