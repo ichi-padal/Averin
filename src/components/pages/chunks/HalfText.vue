@@ -1,10 +1,10 @@
 <template>
   <div class="section__photo-text__text">
     <div class="photo-text__text__center">
-      <h2>
+      <h2  class="gs_reveal">
         {{HalfText.title}}
       </h2>
-      <p>
+      <p  class="gs_reveal">
         {{HalfText.text}}
       </p>
     </div>

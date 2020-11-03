@@ -34,11 +34,14 @@ name: "HalfPhoto",
         width: 50%;
       }
       img {
-        -o-object-fit: cover;
         object-fit: cover;
         min-height: 100vh;
-        width: auto;
+        width: 100%;
+        transition: all 1.5s;
       }
+    }
+    :hover img{
+      transform: scale(1.2);
     }
   }
 }

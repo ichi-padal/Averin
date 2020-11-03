@@ -1,8 +1,8 @@
 <template>
   <section  class="section__pages section__intro">
-    <blockquote class="quote animate_up">
-      <h4 v-scrollanimation class="quote__intro">{{QuoteContent.QuoteTitle}}</h4>
-      <p v-scrollanimation v-html="QuoteContent.QuoteText">
+    <blockquote class="quote">
+      <h4 class="quote__intro gs_reveal">{{QuoteContent.QuoteTitle}}</h4>
+      <p class="gs_reveal" v-html="QuoteContent.QuoteText">
       </p>
     </blockquote>
   </section>

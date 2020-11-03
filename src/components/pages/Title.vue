@@ -22,6 +22,7 @@ name: "Title",
   align-items: center;
   &_h1 {
     text-align: center;
+    text-transform: uppercase;
  }
 }
 </style>

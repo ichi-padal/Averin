@@ -1,25 +1,36 @@
 <template>
   <div  class="home-page__container">
-    <swiper class="swiper swiper-bg" :options="swiperOptionBg" ref="swiperBg">
-      <swiper-slide class="slide-1"></swiper-slide>
-      <swiper-slide class="slide-2"></swiper-slide>
-      <swiper-slide class="slide-3"></swiper-slide>
-      <swiper-slide class="slide-4"></swiper-slide>
-      <div class="swiper-pagination swiper-bg__pagination swiper-pagination-white" slot="pagination"></div>
 
+    <swiper class="swiper swiper-bg" :options="swiperOptionBg" ref="swiperBg">
+
+      <swiper-slide
+          v-for="slidebg in slidersbg"
+          :key="slidebg.backgroundPhoto"
+          :style="{backgroundImage: 'url(~@/assets/img/photo/' + slidebg.backgroundPhoto + ')' }"
+
+      ></swiper-slide>
+
+      <div class="swiper-pagination swiper-bg__pagination swiper-pagination-white" slot="pagination"></div>
     </swiper>
+
     <swiper class="swiper swiper-nav" :options="swiperOptionNav" ref="swiperNav">
+
       <swiper-slide class="swiper-nav__slide">
         <router-link to="/balancingface" class="nav_main__item">
-          <h2 class="nav_main__item__h2">Balancing face and smile silhouette</h2>
+          <h2 class="nav_main__item__h2"><span class="nav_main__item__number">01</span>Balancing face and smile silhouette</h2>
         </router-link>
-        <div class="separator">
-          <div class="separator__cross"></div>
-        </div>
+        <Separator/>
+      </swiper-slide>
+
+      <swiper-slide class="swiper-nav__slide">
+        <router-link to="/balancingface" class="nav_main__item">
+          <h2 class="nav_main__item__h2"><span class="nav_main__item__number">01</span>Balancing face and smile silhouette</h2>
+        </router-link>
+        <Separator/>
       </swiper-slide>
       <swiper-slide class="swiper-nav__slide">
         <router-link to="/handcrafting" class="nav_main__item">
-          <h2 class="nav_main__item__h2">100 hours of silence and hand-crafting</h2>
+          <h2 class="nav_main__item__h2"><span class="nav_main__item__number">02</span>100 hours of silence and hand-crafting</h2>
         </router-link>
         <div class="separator">
           <div class="separator__cross"></div>
@@ -27,7 +38,7 @@
       </swiper-slide>
       <swiper-slide class="swiper-nav__slide">
         <router-link to="/perfection" class="nav_main__item">
-          <h2 class="nav_main__item__h2">Perfection of the porcelain fit</h2>
+          <h2 class="nav_main__item__h2"><span class="nav_main__item__number">03</span>Perfection of the porcelain fit</h2>
         </router-link>
         <div class="separator">
           <div class="separator__cross"></div>
@@ -35,7 +46,7 @@
       </swiper-slide>
       <swiper-slide class="swiper-nav__slide">
         <router-link to="/before" class="nav_main__item">
-          <h2 class="nav_main__item__h2">Before/after</h2>
+          <h2 class="nav_main__item__h2"><span class="nav_main__item__number">04</span>Before/after</h2>
         </router-link>
         <div class="separator">
           <div class="separator__cross"></div>
@@ -44,22 +55,30 @@
       <div class="swiper-prev" slot="button-prev"></div>
       <div class="swiper-next " slot="button-next"></div>
     </swiper>
-    <router-link class="back-to" to="/home">back to main section</router-link>
+    <router-link class="back-to" to="/">back to main section</router-link>
   </div>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import Separator from "@/components/slider/Separator";
 
 export default {
 name: "Aesthetic",
   components: {
+    Separator,
     Swiper,
     SwiperSlide
   },
   data() {
     return {
+      slidersbg: [
+        {backgroundPhoto: "woman_4.jpg"},
+        {backgroundPhoto: "woman_2.jpg"},
+        {backgroundPhoto: "woman_1.jpg"},
+        {backgroundPhoto: "woman_3.jpg"},
+      ],
       swiperOptionBg: {
         spaceBetween: 10,
         effect: 'fade',
@@ -135,6 +154,7 @@ name: "Aesthetic",
   .swiper-slide {
     background-position: center;
     background-size: cover;
+
     &.slide-1 {
       background-image:url('~@/assets/img/photo/woman_4.jpg')
     }
@@ -195,6 +215,15 @@ name: "Aesthetic",
     font-family: $title-font-family;
     font-weight: normal;
     text-align: center;
+    font-size: $h3-font-size;
+  }
+  &__number {
+    width: 4rem;
+    position: absolute;
+    top: -3rem;
+    right: 50%;
+    margin-right: -2rem;
+    color: $color-secondary;
   }
   &:after{
     content: '';
@@ -225,6 +254,7 @@ name: "Aesthetic",
   &:hover {
     .nav_main__item__h2 {
       color: $color-secondary;
+      //text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
     }
     &:after{
       width: 2rem;
@@ -237,37 +267,7 @@ name: "Aesthetic",
   }
 }
 
-.separator {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  width: 3rem;
-  height: 3rem;
-  margin-top: -3rem;
-  &__big {
-    width: 5rem;
-    height: 5rem;
-    margin-top: -5rem;
-  }
-  &__cross {
-    width: 100%;
-    border-bottom: 1px solid $color-white;
-    position: relative;
-    margin-top: 100%;
-    margin-left: 0;
-    transform: rotate(225deg);
-    box-sizing: border-box;
-    &:after {
-      content: '';
-      border-bottom: 1px solid $color-white;
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      left: 0;
-      transform: rotate(-90deg);
-    }
-  }
-}
+
 
 
 .back-to {
