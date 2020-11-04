@@ -27,8 +27,8 @@ name: "MainNavItem",
 
 <style lang="scss">
 .nav_main__item {
-  width: 15rem;
-  height: 15rem;
+  width: 20vw;
+  height: 20vw;
   border: 1px solid $color-white;
   box-sizing: border-box;
   transform: rotate(-135deg);
@@ -38,6 +38,10 @@ name: "MainNavItem",
   transition: 0.5s;
   cursor: pointer;
   text-decoration: none;
+  @media (max-width: $breakpoints-max-mobile) {
+    width: 50vw;
+    height: 50vw;
+  }
   &__h2 {
     color: $color-white;
     transform: rotate(-225deg);
@@ -46,6 +50,9 @@ name: "MainNavItem",
     font-weight: normal;
     text-align: center;
     font-size: $h3-font-size;
+    @media (max-width: $breakpoints-max-mobile) {
+      font-size: $h3-font-size*1.4;
+    }
   }
   &__number {
     width: 4rem;

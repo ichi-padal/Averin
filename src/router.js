@@ -26,19 +26,19 @@ const routes = [
     path: '/about',
     name: 'about',
     meta: {layout: 'main'},
-    component: () => import('./views/About.vue')
+    component: () => import('./views/menu/About.vue')
   },
   {
     path: '/safety',
     name: 'safety',
     meta: {layout: 'main'},
-    component: () => import('./views/Safety.vue')
+    component: () => import('./views/menu/Safety.vue')
   },
   {
     path: '/сontacts',
     name: 'сontacts',
     meta: {layout: 'main'},
-    component: () => import('./views/Contacts.vue')
+    component: () => import('./views/menu/Contacts.vue')
   },
   {
     path: '/balancingface',

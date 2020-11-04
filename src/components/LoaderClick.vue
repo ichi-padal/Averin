@@ -41,11 +41,9 @@ document.addEventListener("click", () => {
     display: flex;
     opacity: 1;
   }
-
-
   &__title {
     text-align: center;
-    font-size: 5rem;
+    font-size: 2.5rem;
     font-family: $title-font-family;
     color: $color-white;
     em {
@@ -56,7 +54,7 @@ document.addEventListener("click", () => {
     text-transform: uppercase;
     text-align: center;
     color: #696868;
-    font-size: 1rem;
+    font-size: 0.8rem;
     letter-spacing: 0.095em;
   }
 }

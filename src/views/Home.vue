@@ -4,15 +4,17 @@
     <LoaderClick/>
     <div class="home__container">
 
-      <Separator/>
+      <Separator class="tablet-none"/>
 
       <MainNavItem :navitem="navitemAesthetic"/>
 
-      <Separator class="separator__big"/>
+      <Separator class="separator__big mobile-none"/>
 
       <MainNavItem :navitem="navitemRegular"/>
 
-      <Separator/>
+      <Separator class="tablet-none"/>
+
+      <DownPicture class="mobile-only"/>
 
     </div>
 
@@ -28,10 +30,12 @@ import LoaderClick from "@/components/LoaderClick";
 import Video from "@/components/header/chunks/Video";
 import Separator from "@/components/slider/Separator";
 import MainNavItem from "@/components/slider/MainNavItem";
+import DownPicture from "@/components/pages/chunks/DownPicture";
 
 export default {
   name: 'Home',
   components: {
+    DownPicture,
     MainNavItem,
     Separator,
     Video,
@@ -63,5 +67,11 @@ export default {
   height: 100vh;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
+  @media (max-width: $breakpoints-max-mobile) {
+    flex-direction: column;
+    height: 200vh;
+    justify-content: space-around;
+  }
 }
 </style>

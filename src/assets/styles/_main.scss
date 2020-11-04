@@ -29,6 +29,35 @@
 * , ::after, ::before {
   box-sizing: border-box;
 }
+
+
+
+
+@media (max-width: $breakpoints-max-desktop) {
+
+}
+@media (max-width: $breakpoints-max-tablet) {
+
+}
+@media (max-width: $breakpoints-max-mobile) {
+
+}
+
+@media (max-width: $breakpoints-max-desktop) {
+
+}
+@media (max-width: $breakpoints-max-tablet) {
+  .tablet-none {
+    display: none!important;
+  }
+}
+@media (max-width: $breakpoints-max-mobile) {
+  .mobile-none {
+    display: none!important;
+  }
+}
+
+
 html, body {
   padding: 0;
   margin: 0;

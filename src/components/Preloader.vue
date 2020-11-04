@@ -72,6 +72,18 @@ window.onload = function () {
     margin-left: -160px;
     text-align: center;
     overflow: visible;
+    @media (max-width: $breakpoints-max-desktop) {
+      width: 230px;
+      height: 130px;
+      margin-top: -65px;
+      margin-left: -115px;
+    }
+    @media (max-width: $breakpoints-max-mobile) {
+      width: 140px;
+      height: 79px;
+      margin-top: -40px;
+      margin-left: -70px;
+    }
   }
   .preloaded_hiding &{
     transition: 0.3s opacity;

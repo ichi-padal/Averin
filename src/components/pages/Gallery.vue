@@ -50,6 +50,9 @@ export default {
   flex-direction: column;
   align-items: normal;
   justify-content: normal;
+  @media (max-width: $breakpoints-max-mobile) {
+    max-height: 50vh;
+  }
 }
 .gallery {
   &__header {

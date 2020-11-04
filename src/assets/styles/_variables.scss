@@ -5,9 +5,10 @@ $color-white: #ffffff;
 $color-light-grey: #F2F2F2;
 $color-secondary: #FF8500;
 
-
-
-
+//Define the maximum width of screen sizes
+$breakpoints-max-mobile: 576px;
+$breakpoints-max-tablet: 768px;
+$breakpoints-max-desktop: 1366px;
 
 //Typography
 $body-font-family: Arial Narrow, san-serif;

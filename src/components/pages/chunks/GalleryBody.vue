@@ -69,15 +69,23 @@ name: "GalleryBody",
     display: flex;
     height: calc(100vh - 8rem);
     align-items: flex-end;
-    //width: 100vw;
+    @media (max-width: $breakpoints-max-mobile) {
+      height: calc(50vh - 8rem);
+    }
   }
   &__item{
     width: auto;
     max-height:calc(100vh - 8rem);
     align-items: flex-end;
     display: flex;
+    @media (max-width: $breakpoints-max-mobile) {
+      height: calc(50vh - 8rem);
+    }
     img {
       max-height:calc(100vh - 8rem);
+      @media (max-width: $breakpoints-max-mobile) {
+        height: calc(50vh - 8rem);
+      }
     }
   }
 }

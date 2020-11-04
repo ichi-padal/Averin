@@ -54,21 +54,30 @@ name: "Contacts"
   width: 100vw;
   min-height: calc(100vh - 3rem);
   height: calc(100% - 3rem);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: 6rem 6.6rem;
+  padding: 6.5rem 6.6rem 2rem;
+  @media (max-width: $breakpoints-max-tablet) {
+    padding: 9rem 3rem 2rem;
+  }
+  @media (max-width: $breakpoints-max-mobile) {
+    padding: 6rem 2rem 2rem;
+  }
   h1 {
     color: $color-white;
     margin: 0;
+    line-height: $h1-font-size;
+    @media (max-width: $breakpoints-max-tablet) {
+      font-size: $h1-font-size -2vh;
+    }
+    @media (max-width: $breakpoints-max-mobile) {
+      font-size: $h1-font-size * 0.6;
+    }
   }
   &__row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    @media print,screen and (min-width: 768px) {
-      flex-direction: row;
+    @media print,screen and (max-width: $breakpoints-max-mobile) {
+      flex-direction: column;
     }
     & > div{
       &:first-child {
@@ -85,6 +94,10 @@ name: "Contacts"
 
 .hr-white {
   margin: 2rem 0;
+  @media (max-width: $breakpoints-max-tablet) {
+    margin: 1rem 0;
+
+  }
 }
 
 

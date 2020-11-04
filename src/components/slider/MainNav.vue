@@ -19,12 +19,12 @@
         <MainNavItem :navitem="slidenav">
           <span class="nav_main__item__number">0{{index + 1}}</span>
         </MainNavItem>
-        <Separator/>
+        <Separator class="mobile-none"/>
       </swiper-slide>
       <div class="swiper-prev" slot="button-prev"></div>
       <div class="swiper-next " slot="button-next"></div>
     </swiper>
-
+    <DownPicture class="mobile-only"/>
     <router-link class="back-to" to="/">back to main section</router-link>
   </div>
 </template>
@@ -34,10 +34,12 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import Separator from "@/components/slider/Separator";
 import MainNavItem from "@/components/slider/MainNavItem";
+import DownPicture from "@/components/pages/chunks/DownPicture";
 
 export default {
   name: "MainNav",
   components: {
+    DownPicture,
     MainNavItem,
     Separator,
     Swiper,
@@ -57,9 +59,16 @@ export default {
         loop:true,
         loopedSlides: 4,
         speed: 1000,
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   type: 'fraction',
+        // },
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction',
+          renderBullet(index, pagination) {
+            return `<span class="${pagination}">0${index + 1}</span>`
+          }
         },
         navigation: {
           nextEl: '.swiper-next ',
@@ -74,7 +83,11 @@ export default {
         slidesPerView: 2,
         speed: 1000,
         touchRatio: 0.2,
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        // slidesPerGroup:4,
+        // slidesPerColumn:2,
+        // slidesPerColumnFill : 'row',
+        direction: 'horizontal',
       }
     }
   },
@@ -106,6 +119,9 @@ export default {
   justify-content: center;
   background-color: red;
   outline: none;
+  @media (max-width: $breakpoints-max-mobile) {
+    display: none;
+  }
 }
 .swiper-prev {
   left: 0;
@@ -130,6 +146,11 @@ export default {
   }
   &__pagination {
     color: $color-white;
+    @media (max-width: $breakpoints-max-mobile) {
+      text-align: right;
+      padding: 0 2rem 1vh;
+      font-size: 1rem;
+    }
   }
   &__opacity {
     width: 100%;
@@ -148,6 +169,9 @@ export default {
   align-items: center;
   z-index: 5;
   top: 0;
+  @media (max-width: $breakpoints-max-mobile) {
+    flex-direction: column;
+  }
   &__slide {
     display: flex;
     justify-content: center;

@@ -54,8 +54,9 @@
 
     </nav>
     <div class="burger__img">
+
       <picture>
-        <source srcset="../assets/img/photo/woman_6.jpg" media="(max-width: 1366px)">
+        <source srcset="../assets/img/photo/woman_3.jpg" media="(max-width: 1366px)">
         <img src="../assets/img/photo/woman_6.jpg" alt="Photo">
       </picture>
     </div>
@@ -109,26 +110,32 @@ export default {
   right: 0;
   z-index: 110;
   grid-template-columns:  2fr 1fr ;
-  padding: 220px 120px 60px;
-  -webkit-transition: transform 500ms ease;
-  -moz-transition: transform 500ms ease;
-  -ms-transition: transform 500ms ease;
-  -o-transition: transform 500ms ease;
+  padding: 7rem 4rem 2rem;
   transition: transform 500ms ease;
   transform: translateX(100%);
   .burger__open & {
     transform: translateX(0);
   }
-  @media print,screen and (max-width: 768px) {
+  @media (max-width: $breakpoints-max-desktop) {
+    padding: 5rem 3rem 0.5rem;
+  }
+  @media (max-width: $breakpoints-max-tablet) {
     grid-template-columns: 100%;
     grid-template-rows: 100%;
-    padding: 150px 90px 10px;
-
+    padding: 7rem 5rem 0.5rem;
+  }
+  @media (max-width: $breakpoints-max-mobile) {
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    padding: 5rem 1rem 0.5rem;
   }
   &__nav {
     display: grid;
     grid-template-columns: 50% 50% ;
-    @media print,screen and (max-width: 1366px) {
+    @media (max-width: $breakpoints-max-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $breakpoints-max-mobile) {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -137,13 +144,13 @@ export default {
   }
   &__menu-sub__wrap {
     grid-column-start: 2;
-    @media print,screen and (max-width: 768px) {
-      display: none;
-    }
   }
   &__img {
     padding: 60px 0;
+    height: 80vh;
+    overflow: hidden;
     img{
+      width: 100%;
     }
     @media print,screen and (max-width: 768px) {
       display: none;
@@ -193,11 +200,18 @@ export default {
     &-main {
       a {
         font-size: $h3-font-size;
+        line-height: 1.5rem;
+        @media (max-width: $breakpoints-max-tablet) {
+          line-height: 2rem;
+        }
       }
     }
     &-sub {
       a {
-
+        line-height: 1.5rem;
+        @media (max-width: $breakpoints-max-tablet) {
+          line-height: 2rem;
+        }
       }
     }
   }
