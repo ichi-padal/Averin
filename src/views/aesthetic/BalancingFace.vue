@@ -46,7 +46,14 @@ name: "BalancingFace",
         QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
       },
       Gallery: {
-        GalleryImg: ['woman_1.jpg', 'woman_2.jpg', 'woman_3.jpg', 'woman_4.jpg', 'woman_5.jpg', 'photo_2020-09-04_13-18-04.jpg']
+        title: 'Gallery',
+        GalleryImg: [
+          {fileName: 'woman_1.jpg', alt: 'photo woman 1'},
+          {fileName: 'woman_2.jpg', alt: 'photo woman 2'},
+          {fileName: 'woman_3.jpg', alt: 'photo woman 3'},
+          {fileName: 'woman_4.jpg', alt: 'photo woman 4'},
+          {fileName: 'woman_6.jpg', alt: 'photo woman 5'},
+        ]
       },
       TextPhotoContent: {
         HalfPhoto: {

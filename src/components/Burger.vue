@@ -55,8 +55,8 @@
     </nav>
     <div class="burger__img">
       <picture>
-        <source srcset="../assets/img/photo/photo_2020-09-04_13-18-04.jpg" media="(max-width: 1366px)">
-        <img src="../assets/img/photo/photo_2020-09-04_13-18-04.jpg" alt="Photo">
+        <source srcset="../assets/img/photo/woman_6.jpg" media="(max-width: 1366px)">
+        <img src="../assets/img/photo/woman_6.jpg" alt="Photo">
       </picture>
     </div>
 
