@@ -82,6 +82,9 @@ export default {
   transition: transform .05s linear,opacity 1s linear,background-color .2s,width .1s linear,height .1s linear,top .1s linear,left .1s linear,-webkit-transform .05s linear;
   -webkit-transform-origin: center;
   transform-origin: center;
+  @media (max-width: $breakpoints-max-mobile) {
+    display: none;
+  }
 }
 
 

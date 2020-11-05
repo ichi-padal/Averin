@@ -59,16 +59,9 @@ export default {
         loop:true,
         loopedSlides: 4,
         speed: 1000,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   type: 'fraction',
-        // },
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction',
-          renderBullet(index, pagination) {
-            return `<span class="${pagination}">0${index + 1}</span>`
-          }
         },
         navigation: {
           nextEl: '.swiper-next ',
@@ -80,14 +73,14 @@ export default {
         loopedSlides: 4, // looped slides should be the same
         spaceBetween: 10,
         centeredSlides: true,
-        slidesPerView: 2,
-        speed: 1000,
+        slidesPerView: optionSwiper('slidesPerView'),
+        speed: 900,
         touchRatio: 0.2,
+        mousewheel: true,
         slideToClickedSlide: true,
-        // slidesPerGroup:4,
-        // slidesPerColumn:2,
-        // slidesPerColumnFill : 'row',
-        direction: 'horizontal',
+        slidesPerColumn:1,
+        slidesPerColumnFill : 'row',
+        direction: optionSwiper ('direction'),
       }
     }
   },
@@ -98,6 +91,23 @@ export default {
       swiperBg.controller.control = swiperNav
       swiperNav.controller.control = swiperBg
     })
+  }
+}
+function optionSwiper (option) {
+  let winWidth = screen.width;
+  switch (option) {
+    case 'direction':
+      if (winWidth >= 576) {
+        return 'horizontal';
+      } else {
+        return 'vertical';
+      }
+    case 'slidesPerView':
+      if (winWidth >= 576) {
+        return 2;
+      } else {
+        return 1;
+      }
   }
 }
 </script>
@@ -194,5 +204,7 @@ export default {
   color: $color-white;
   text-decoration: none;
   text-transform: uppercase;
+  @media (max-width: $breakpoints-max-mobile) {
+  }
 }
 </style>

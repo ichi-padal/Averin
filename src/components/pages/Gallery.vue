@@ -71,10 +71,14 @@ export default {
     justify-content: center;
     align-items: center;
     &__separator {
-      margin: 0 0.5rem;
+      svg {
+        height: 1.2rem;
+      }
+      margin: 1rem 0.5rem 0.7rem;
     }
     &__btn {
       display: flex;
+      width: 2.5rem;
     }
   }
 }

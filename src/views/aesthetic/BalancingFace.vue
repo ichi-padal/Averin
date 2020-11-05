@@ -21,8 +21,7 @@ import PhotoText from "@/components/pages/PhotoText";
 import Quote from "@/components/pages/Quote";
 import Title from "@/components/pages/Title";
 import TextPhoto from "@/components/pages/TextPhoto";
-import {gsap} from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 
 export default {
@@ -95,37 +94,7 @@ name: "BalancingFace",
   //   }
   // }
 
-  mounted() {
-    function animateFrom(elem, direction) {
-      direction = direction | 1;
-      var x = 0,
-          y = direction * 200;
-      gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-        duration: 1.5,
-        x: 0,
-        y: 0,
-        autoAlpha: 1,
-        ease: "ease",
-        overwrite: "auto"
-      });
-    }
-    function hide(elem) {
-      gsap.set(elem, {autoAlpha: 0});
-    }
-    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
-      hide(elem); // assure that the element is hidden when scrolled into view
 
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "-150% center",
-        end: "bottom center",
-        onEnter: function() { animateFrom(elem) },
-        // onEnterBack: function() { animateFrom(elem, -1) },
-        // onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-      });
-    });
-
-  }
 }
 
 

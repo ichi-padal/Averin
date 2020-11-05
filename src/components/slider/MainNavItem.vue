@@ -66,25 +66,25 @@ name: "MainNavItem",
     content: '';
     display: block;
     position: absolute;
-    width: 0;
+    width: 3rem;
     border-top: 1px solid $color-white;
-    bottom: -3rem;
-    right: -3rem;
+    bottom: -2rem;
+    right: -2rem;
     transform: rotate(-135deg);
     height: 0;
-    margin-right: 0;
+    margin-right: -1.5rem;
     transition: width 0.5s, margin 0.5s;
   }
   &:before {
     content: '';
     display: block;
     position: absolute;
-    width: 0;
+    width: 3rem;
     height: 0;
     border-top: 1px solid $color-white;
-    top: -3rem;
-    left: -3rem;
-    margin-left: 0;
+    top: -2rem;
+    left: -2rem;
+    margin-left: -1.5rem;
     transform: rotate(-135deg);
     transition: width 0.5s, margin 0.5s;
   }
@@ -93,12 +93,12 @@ name: "MainNavItem",
       color: $color-secondary;
     }
     &:after{
-      width: 2rem;
-      margin-right: -1rem;
+      width: 0;
+      margin-right: 0;
     }
     &:before {
-      width: 2rem;
-      margin-left: -1rem;
+      width: 0;
+      margin-left: 0;
     }
   }
 }
