@@ -27,7 +27,8 @@ name: "Perfection",
       TitlePage: 'Perfection of the porcelain fit',
       PhotoTextContent: {
         HalfPhoto: {
-          photoFile: 'woman_5.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {

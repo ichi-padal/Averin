@@ -55,18 +55,18 @@
     </nav>
     <div class="burger__img">
 
-      <picture>
-        <source srcset="../assets/img/photo/woman_3.jpg" media="(max-width: 1366px)">
-        <img src="../assets/img/photo/woman_6.jpg" alt="Photo">
-      </picture>
+      <Picture :photo="photo"/>
+
     </div>
 
   </div>
 </template>
 
 <script>
+import Picture from "@/components/pages/chunks/Picture";
 export default {
   name: "Burger",
+  components: {Picture},
   props: ['value'],
   data: () => ({
     nav_links: [
@@ -88,7 +88,12 @@ export default {
       {title: 'Sleep dentistry', url: '/sleepdentistry'},
       {title: 'Endo therapy', url: '/endotherapy'},
       {title: 'Invisalign', url: '/invisalign'}
-    ]
+    ],
+    photo: {
+      photoFileMobile: 'woman_2',
+      photoFile: 'woman_4',
+      photoAlt: 'Photo one woman'
+    }
   })
 }
 
@@ -149,8 +154,12 @@ export default {
     padding: 60px 0;
     height: 80vh;
     overflow: hidden;
+    picture {
+      height: 100%;
+    }
     img{
-      width: 100%;
+      //width: 100%;
+      height: 100%;
     }
     @media print,screen and (max-width: 768px) {
       display: none;

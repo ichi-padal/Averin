@@ -11,7 +11,7 @@
 
 <script>
 export default {
-name: "DownPicture"
+name: "DownPicture",
 }
 </script>
 
@@ -24,6 +24,9 @@ name: "DownPicture"
   left: 50%;
   margin-left: -0.5rem;
   z-index: 100;
+  &.fixed-home-page {
+    position: fixed;
+  }
   svg {
     width: 1rem;
     height: 0.4rem;

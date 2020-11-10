@@ -1,7 +1,7 @@
 <template>
   <section class="section__pages section__photo-text">
     <HalfText :half-text="PhotoTextContent.HalfText"/>
-    <HalfPhoto :half-photo="PhotoTextContent.HalfPhoto" class=""/>
+    <HalfPhoto :half-photo="PhotoTextContent.HalfPhoto"/>
   </section>
 </template>
 

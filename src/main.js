@@ -4,7 +4,7 @@ import router from './router'
 import ScrollAnimation from './directives/scrollanimation'   //моя ебучая директива, надо допиливать
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import VueAwesomeSwiper from 'vue-awesome-swiper' 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 

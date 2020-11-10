@@ -30,8 +30,9 @@ name: "Restoration",
       TitlePage: 'Restoration',
       PhotoTextContent: {
         HalfPhoto: {
-          photoFile: 'woman_2.jpg',
-          photoAlt: 'Restoration'
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
+          photoAlt: 'Photo one woman'
         },
         HalfText: {
           title: 'Hygiene',
@@ -54,7 +55,8 @@ name: "Restoration",
       },
       TextPhotoContent: {
         HalfPhoto: {
-          photoFile: 'woman_4.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {

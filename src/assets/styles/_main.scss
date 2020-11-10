@@ -93,12 +93,25 @@ body {
   }
 }
 
-.section__pages {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $color-white;
+.section{
+  &__pages {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-white;
+    overflow: hidden;
+  }
+  &__photo-text {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow: hidden;
+    @media print,screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
 }
 
 

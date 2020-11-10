@@ -30,7 +30,8 @@ name: "HandCrafting",
       TitlePage: '100 hours of silence and hand-crafting',
       PhotoTextContent: {
         HalfPhoto: {
-          photoFile: 'woman_3.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {
@@ -56,7 +57,8 @@ name: "HandCrafting",
       },
       TextPhotoContent: {
         HalfPhoto: {
-          photoFile: 'woman_1.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {

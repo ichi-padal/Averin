@@ -30,7 +30,8 @@ name: "Hygiene",
       TitlePage: 'Hygiene',
       PhotoTextContent: {
         HalfPhoto: {
-          photoFile: 'woman_2.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {
@@ -54,7 +55,8 @@ name: "Hygiene",
       },
       TextPhotoContent: {
         HalfPhoto: {
-          photoFile: 'woman_4.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {

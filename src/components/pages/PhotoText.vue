@@ -1,7 +1,7 @@
 <template>
   <section class="section__pages section__photo-text">
     <HalfPhoto :half-photo="PhotoTextContent.HalfPhoto"/>
-    <HalfText :half-text="PhotoTextContent.HalfText" class="bg-grey"/>
+    <HalfText :half-text="PhotoTextContent.HalfText" />
   </section>
 </template>
 
@@ -26,7 +26,6 @@ name: "Photo-text",
     align-items: stretch;
     justify-content: space-around;
     flex-direction: column;
-    height: auto;
     overflow: hidden;
     @media print,screen and (min-width: 768px) {
       flex-direction: row;

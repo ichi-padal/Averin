@@ -14,7 +14,7 @@
 
       <Separator class="tablet-none"/>
 
-      <DownPicture class="mobile-only"/>
+      <DownPicture class="mobile-only fixed-home-page"/>
 
     </div>
 
@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home-page__container {
   position: relative;
 }

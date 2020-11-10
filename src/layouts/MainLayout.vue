@@ -44,7 +44,7 @@ export default {
       var x = 0,
           y = direction * 200;
       gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-        duration: 1.5,
+        duration: 2,
         x: 0,
         y: 0,
         autoAlpha: 1,
@@ -60,8 +60,9 @@ export default {
 
       ScrollTrigger.create({
         trigger: elem,
-        start: "top 90%",
+        start: "top 100%",
         end: "bottom center",
+        // once: true, одно повторение
         onEnter: function() { animateFrom(elem) },
         // onEnterBack: function() { animateFrom(elem, -1) },
         // onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
@@ -73,7 +74,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-main-layout {
   overflow: hidden;
   min-height: 100vh;
@@ -81,6 +82,4 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-
-
 </style>
