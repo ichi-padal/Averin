@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-slider-layout {
   overflow: hidden;
   min-height: 100vh;
@@ -34,6 +34,4 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-
-
 </style>

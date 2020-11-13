@@ -28,12 +28,6 @@
       <span class="btn__hamburger__line"></span>
     </button>
 
-<!--    <div class="hamburger&#45;&#45;spin">-->
-<!--      <div class="hamburger-box">-->
-<!--        <div class="hamburger-inner"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-
   </header>
 </template>
 
@@ -78,19 +72,12 @@ export default {
   }
 
 }
-//
-// let hamburger = document.querySelector(".btn__hamburger");
-//
-// hamburger.addEventListener("click", function() {
-//   this.classList.toggle("is-active");
-// }, false);
-
 
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" scoped>
 header.header {
   padding: 1rem 1.5rem;
   position: fixed;
@@ -103,15 +90,6 @@ header.header {
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  @media print,screen and (min-width: 768px) {
-
-  }
-  @media print,screen and (min-width: 1366px) {
-
-  }
-  @media print,screen and (min-width: 1920px) {
-
-  }
 }
 .headroom {
   will-change: transform;
@@ -129,6 +107,16 @@ header.header {
   &__img {
     transition: fill .3s;
     fill: $color-white;
+    width: 117px;
+    height: 67px;
+    @media (max-width: $breakpoints-max-desktop) {
+      width: 83px;
+      height: 47px;
+    }
+    @media (max-width: $breakpoints-max-mobile) {
+      width: 64px;
+      height: 37px;
+    }
     path {
       fill: $color-white;
     }
@@ -143,6 +131,10 @@ header.header {
   position: relative;
   width: 54px;
   height: 54px;
+  @media (max-width: $breakpoints-max-mobile) {
+    width: 38px;
+    height: 38px;
+  }
   &__line {
     width: 100%;
     border-bottom: 3px solid $color-white;

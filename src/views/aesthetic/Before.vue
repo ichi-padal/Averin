@@ -1,30 +1,41 @@
 <template>
   <div>
-    <Title/>
+    <Title :TitlePage="TitlePage"/>
 
-    <Quote/>
+    <TextPhoto :PhotoTextContent="TextPhotoContent"/>
 
-    <PhotoText/>
-
-    <Gallery/>
-
-    <TextPhoto/>
-
-    <Button/>
+    <Button :ButtonTitle="ButtonTitle"/>
   </div>
 </template>
 
 <script>
 import Button from "@/components/pages/Button";
-import Gallery from "@/components/pages/Gallery";
-import PhotoText from "@/components/pages/PhotoText";
-import Quote from "@/components/pages/Quote";
 import Title from "@/components/pages/Title";
 import TextPhoto from "@/components/pages/TextPhoto";
 
 export default {
 name: "Before",
-  components: {TextPhoto, Title, Quote, PhotoText, Gallery, Button},
+  components: {TextPhoto, Title, Button},
+  data() {
+    return {
+      TitlePage: 'before/after',
+      TextPhotoContent: {
+        HalfPhoto: {
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
+          photoAlt: 'Photo one woman'
+        },
+        HalfText: {
+          title: 'Before/after',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
+        }
+      },
+      ButtonTitle: {
+        title: 'all procedures',
+        url: '/aesthetic'
+      }
+    }
+  },
 }
 
 </script>

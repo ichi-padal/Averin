@@ -1,7 +1,15 @@
 <template>
   <footer class="footer">
-    <div class="copyright">© Copyright 2020</div>
-    <a class="footer__link" href="#">follow us on facebook</a>
+    <div class="footer_col">
+      <router-link class="footer__link" to="">procedures</router-link>
+      <router-link class="footer__link" to="/about">about us</router-link>
+    </div>
+    <div class="footer_col">
+      <a class="footer__link" href="mailto:averindc@gmail.com">averindc@gmail.com</a>
+      <a class="footer__link" href="#">facebook</a>
+      <a class="footer__link" href="#">instagram</a>
+    </div>
+
   </footer>
 </template>
 
@@ -22,13 +30,20 @@ footer.footer {
   padding: 1.2rem;
   height: 3rem;
   z-index: 100;
+  @media (max-width: $breakpoints-max-mobile) {
+    height: 5rem;
+  }
 }
-.copyright {
-
+.footer_col {
+  display: flex;
+  @media (max-width: $breakpoints-max-mobile) {
+    flex-direction: column;
+  }
 }
 .footer__link {
   color: $color-light-black;
   text-decoration: none;
+  margin: 0 0.5rem;
   &:hover {
     text-decoration: underline;
   }

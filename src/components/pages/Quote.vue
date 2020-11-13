@@ -32,17 +32,25 @@ name: "Quote",
   grid-template-columns: 1fr 3fr;
   grid-gap: 10vw;
   padding: 10vw;
-  @media print,screen and (max-width: 768px) {
+  @media (max-width: $breakpoints-max-tablet) {
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 5vw;
+    padding: 3vw;
+  }
+  @media (max-width: $breakpoints-max-mobile) {
     grid-template-columns: 1fr;
     grid-gap: 1vw;
+    padding: 1vw;
   }
+
   &__intro {
     text-align: right;
     font-weight: normal;
     margin: 0.7rem 0;
-    @media print,screen and (max-width: 768px) {
+    @media (max-width: $breakpoints-max-mobile) {
       text-align: left;
     }
+
   }
   p {
     font-size: $h2-font-size;

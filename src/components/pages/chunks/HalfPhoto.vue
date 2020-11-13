@@ -1,23 +1,16 @@
 <template>
   <div class="section__photo-text__photo">
-    <picture>
-      <source :srcset="require(`@/assets/img/photo/${HalfPhoto.photoFile}`)">
-      <img :src="require(`@/assets/img/photo/${HalfPhoto.photoFile}`)" :alt="HalfPhoto.photoAlt">
-    </picture>
+    <Picture :photo="HalfPhoto"/>
   </div>
 </template>
 
 <script>
+import Picture from "@/components/pages/chunks/Picture";
 export default {
 name: "HalfPhoto",
+  components: {Picture},
   props: {
     HalfPhoto: {
-      photoFile: {
-        default: 'woman_2.jpg'
-      },
-      photoAlt: {
-        default: 'Default photo'
-      }
     }
   }
 }
@@ -27,7 +20,7 @@ name: "HalfPhoto",
 .section {
   &__photo-text{
     &__photo {
-      margin: 1vw;
+      //margin: 1vw;
       width: 100%;
       overflow: hidden;
       @media print,screen and (min-width: 768px) {

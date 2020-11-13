@@ -21,8 +21,7 @@ import PhotoText from "@/components/pages/PhotoText";
 import Quote from "@/components/pages/Quote";
 import Title from "@/components/pages/Title";
 import TextPhoto from "@/components/pages/TextPhoto";
-import {gsap} from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 
 export default {
@@ -33,7 +32,8 @@ name: "BalancingFace",
       TitlePage: 'Balancing face and smile silhouette',
       PhotoTextContent: {
         HalfPhoto: {
-          photoFile: 'woman_2.jpg',
+          photoFileMobile: 'woman_2',
+          photoFile: 'woman_2',
           photoAlt: 'Photo one woman'
         },
         HalfText: {
@@ -43,17 +43,26 @@ name: "BalancingFace",
       },
       QuoteContent: {
         QuoteTitle: 'Intro',
-        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt.'
+        QuoteText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="color-secondary"> Non a viverra varius sed urna, consequat ornare sagittis.</span> Lorem senectus ut non ac lacus facilisi nulla tincidunt. '
       },
       Gallery: {
-        GalleryImg: ['woman_1.jpg', 'woman_2.jpg', 'woman_3.jpg', 'woman_4.jpg', 'woman_5.jpg', 'photo_2020-09-04_13-18-04.jpg']
+        title: 'Gallery',
+        GalleryImg: [
+          {fileName: 'woman_1.jpg', alt: 'photo woman 1'},
+          {fileName: 'woman_2.jpg', alt: 'photo woman 2'},
+          {fileName: 'woman_3.jpg', alt: 'photo woman 3'},
+          {fileName: 'woman_4.jpg', alt: 'photo woman 4'},
+          {fileName: 'woman_6.jpg', alt: 'photo woman 5'},
+        ]
       },
       TextPhotoContent: {
         HalfPhoto: {
-          photoFile: 'woman_4.jpg',
+          photoFileMobile: 'woman_4',
+          photoFile: 'woman_4',
           photoAlt: 'Photo one woman'
         },
         HalfText: {
+          isGrey: true,
           title: 'Balancing face qqqqqqqqqqq',
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, ultricies neque, sagittis tincidunt fermentum habitant nulla. Quam mi at purus platea. Tellus, dui, sed blandit id eu, volutpat risus aliquam. Morbi tincidunt mollis vulputate elit. Pulvinar vitae, quam amet amet. Eget vitae placerat elit est, viverra nunc cras. Sed pretium lectus duis ultricies.'
         }
@@ -64,61 +73,6 @@ name: "BalancingFace",
       }
     }
   },
-
-
-
-
-
-  // working one element
-  // mounted: function() {
-  //   this.scrollAnimation();
-  // },
-  // methods: {
-  //   scrollAnimation() {
-  //     gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: ".animate_up",
-  //         start: "-150% center",
-  //         end: "bottom center",
-  //         markers: true,
-  //         overwrite: "auto"
-  //       }
-  //     })
-  //       .from(".animate_up", {y: 500, opacity: 0, duration: 1.5})
-  //   }
-  // }
-
-  mounted() {
-    function animateFrom(elem, direction) {
-      direction = direction | 1;
-      var x = 0,
-          y = direction * 200;
-      gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-        duration: 1.5,
-        x: 0,
-        y: 0,
-        autoAlpha: 1,
-        ease: "ease",
-        overwrite: "auto"
-      });
-    }
-    function hide(elem) {
-      gsap.set(elem, {autoAlpha: 0});
-    }
-    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
-      hide(elem); // assure that the element is hidden when scrolled into view
-
-      ScrollTrigger.create({
-        trigger: elem,
-        start: "-150% center",
-        end: "bottom center",
-        onEnter: function() { animateFrom(elem) },
-        // onEnterBack: function() { animateFrom(elem, -1) },
-        // onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-      });
-    });
-
-  }
 }
 
 

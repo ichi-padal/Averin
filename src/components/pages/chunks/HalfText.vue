@@ -1,5 +1,5 @@
 <template>
-  <div class="section__photo-text__text">
+  <div class="section__photo-text__text" :class="{'bg_grey': HalfText.isGrey}">
     <div class="photo-text__text__center">
       <h2  class="gs_reveal">
         {{HalfText.title}}
@@ -16,6 +16,7 @@ export default {
 name: "HalfText",
   props: {
     HalfText: {
+      isGrey: '',
       title: {
         default: 'woman_2.jpg'
       },
@@ -39,8 +40,11 @@ name: "HalfText",
       @media print,screen and (min-width: 768px) {
         width: 50%;
       }
-      &.bg-grey {
+      &.bg_grey {
         background-color: $color-light-grey;
+        @media  (max-width: $breakpoints-max-desktop) {
+          text-align: center;
+        }
       }
     }
   }
