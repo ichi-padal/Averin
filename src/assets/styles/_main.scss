@@ -30,7 +30,9 @@
   box-sizing: border-box;
 }
 
-
+.mobile-only {
+  display: none;
+}
 
 
 @media (max-width: $breakpoints-max-desktop) {
@@ -55,7 +57,11 @@
   .mobile-none {
     display: none!important;
   }
+  .mobile-only {
+    display: block;
+  }
 }
+
 
 
 html, body {

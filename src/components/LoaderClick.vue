@@ -1,6 +1,6 @@
 <template>
   <div class="loader-click">
-      <p class="loader-click__title">Elevating smile-making to <br> <em class="color-secondary">the level of art</em></p>
+      <p class="loader-click__title">Elevating <br class="mobile-only"> smile-making to <br> <em class="color-secondary">the level of art</em></p>
       <p class="loader-click__prompt">Click anywhre to continue</p>
   </div>
 </template>

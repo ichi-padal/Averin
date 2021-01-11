@@ -28,12 +28,12 @@
         </div>
       </div>
       <div>
-        <form action="#">
+        <form id="contact" action="#">
           <h2 class="form__title color-secondary">Get in <em>touch</em></h2>
-          <input class="input__text" type="tel" name="form_phone" required placeholder="Your phone number" pattern="^[0-9-+\s()]*$"  title="Phone number with 7-9 and remaing 9 digit with 0-9">
-          <input class="input__text" type="email" name="form_email" required placeholder="Your email adress" title="Your email adress">
+          <input class="input__text required phone" type="tel" name="form_phone" required placeholder="Your phone number" pattern="^[0-9-+\s()]*$"  title="Phone number with 7-9 and remaing 9 digit with 0-9">
+          <input class="input__text required email" type="email" name="form_email" required placeholder="Your email adress" title="Your email adress">
           <div class="button button__contacts button__white">
-            <input class="button__input" type="submit" value="Submit">
+            <input  class="button__input" type="submit" value="Submit">
           </div>
         </form>
       </div>
@@ -43,7 +43,36 @@
 
 <script>
 export default {
-name: "Contacts"
+name: "Contacts",
+  // methods: {
+  //   submit: function () {
+  //     const form = document.querySelector('#contact')
+  //     form.addEventListener('submit', formSend);
+  //
+  //     async function formSend(e) {
+  //       e.preventDefault();
+  //       let error = formValidate(form);
+  //     }
+  //
+  //     function formValidate(form) {
+  //       let error = 0;
+  //       let formReq = document.querySelectorAll('.required');
+  //
+  //       for (let i = 0; i < formReq.length; i++) {
+  //         const input = formReq[i];
+  //
+  //       }
+  //     }
+  //     function formAddError(input) {
+  //       input.parentElement.classList.add('_error');
+  //       input.classList.add('_error');
+  //     }
+  //     function formRemoveError(input) {
+  //       input.parentElement.classList.remove('_error');
+  //       input.classList.remove('_error');
+  //     }
+  //   }
+  // }
 }
 </script>
 

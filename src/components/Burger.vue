@@ -9,6 +9,7 @@
               :key="link.url"
               tag="li"
               active-class="active"
+              class="burger__menu-main__li"
               :to="link.url"
               :exact="link.exact"
           >
@@ -27,6 +28,7 @@
               :key="link.url"
               tag="li"
               active-class="active"
+              class="burger__menu-sub__li"
               :to="link.url"
               :exact="link.exact"
           >
@@ -43,6 +45,7 @@
               :key="link.url"
               tag="li"
               active-class="active"
+              class="burger__menu-sub__li"
               :to="link.url"
               :exact="link.exact"
           >
@@ -115,7 +118,7 @@ export default {
   right: 0;
   z-index: 110;
   grid-template-columns:  2fr 1fr ;
-  padding: 7rem 4rem 2rem;
+  padding: 10vh 4rem 2rem;
   transition: transform 500ms ease;
   transform: translateX(100%);
   .burger__open & {
@@ -207,20 +210,24 @@ export default {
       }
     }
     &-main {
+      &__li {
+        @media (max-width: $breakpoints-max-tablet) {
+          margin-bottom: 1.5rem;
+        }
+      }
       a {
         font-size: $h3-font-size;
-        line-height: 1.5rem;
-        @media (max-width: $breakpoints-max-tablet) {
-          line-height: 2rem;
-        }
+        line-height: 2rem;
       }
     }
     &-sub {
+      &__li {
+        @media (max-width: $breakpoints-max-tablet) {
+          margin-bottom: 1.5rem;
+        }
+      }
       a {
         line-height: 1.5rem;
-        @media (max-width: $breakpoints-max-tablet) {
-          line-height: 2rem;
-        }
       }
     }
   }
