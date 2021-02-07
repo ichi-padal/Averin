@@ -29,6 +29,9 @@ export default {
 
     gsap.set(circle, { xPercent: -50, yPercent: -50 });
 
+
+    var links = document.querySelector('.link-to-cursor');
+    var cursor = document.querySelector('.circle');
     var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     var mouse = { x: pos.x, y: pos.y };
     var speed = 0.3;
@@ -42,6 +45,18 @@ export default {
       mouse.x = e.x;
       mouse.y = e.y;
     });
+
+    window.addEventListener("click", () => {
+      var removeClass =  function (){
+        cursor.classList.remove("circle-click")
+      }
+      if (links) {
+        cursor.classList.add("circle-click");
+        setTimeout(
+            removeClass , 200
+        )
+      }
+    })
 
     gsap.ticker.add((time, deltaTime) => {
       var delta = deltaTime * fpms;
@@ -86,6 +101,10 @@ export default {
   transform-origin: center;
   @media (max-width: $breakpoints-max-mobile) {
     display: none;
+  }
+  &.circle-click {
+    height: 3rem;
+    width: 3rem;
   }
 }
 

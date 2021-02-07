@@ -13,7 +13,7 @@
               :to="link.url"
               :exact="link.exact"
           >
-            <a href="#" class="">{{link.title}}</a>
+            <a href="#" class="link-to-cursor">{{link.title}}</a>
           </router-link>
         </ul>
       </div>
@@ -32,7 +32,7 @@
               :to="link.url"
               :exact="link.exact"
           >
-            <a href="#" class="">{{link.title}}</a>
+            <a href="#" class="link-to-cursor">{{link.title}}</a>
           </router-link>
         </ul>
 
@@ -49,7 +49,7 @@
               :to="link.url"
               :exact="link.exact"
           >
-            <a href="#" class="">{{link.title}}</a>
+            <a href="#" class="link-to-cursor">{{link.title}}</a>
           </router-link>
         </ul>
       </div>

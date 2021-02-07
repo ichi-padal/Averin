@@ -6,25 +6,25 @@
       <div>
         <div class="contacts__info-section">
           <h5 class="color-secondary">phone number</h5>
-          <a class="contacts__link"  title="phone" href="tel:+380684447007">
+          <a class="contacts__link link-to-cursor"  title="phone" href="tel:+380684447007">
             +38 068 444 70 07
           </a>
         </div>
         <div class="contacts__info-section">
           <h5 class="color-secondary">adres</h5>
-          <a class="contacts__link"  title="adres" href="https://www.google.com/maps/place/50%C2%B024'31.6%22N+30%C2%B032'41.8%22E/@50.4087854,30.5427543,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x40d4cf4262a329e7:0x9a4d20de351451c1!2z0YPQuy4g0JzQuNGF0LDQuNC70LAg0JTRgNCw0LPQvtC80LjRgNC-0LLQsCwgMTUsINCa0LjQtdCyLCAwMjAwMA!3b1!8m2!3d50.408789!4d30.5449542!3m5!1s0x0:0x0!7e2!8m2!3d50.4087821!4d30.5449435">
+          <a class="contacts__link link-to-cursor"  title="adres" href="https://www.google.com/maps/place/50%C2%B024'31.6%22N+30%C2%B032'41.8%22E/@50.4087854,30.5427543,17z/data=!3m1!4b1!4m14!1m7!3m6!1s0x40d4cf4262a329e7:0x9a4d20de351451c1!2z0YPQuy4g0JzQuNGF0LDQuNC70LAg0JTRgNCw0LPQvtC80LjRgNC-0LLQsCwgMTUsINCa0LjQtdCyLCAwMjAwMA!3b1!8m2!3d50.408789!4d30.5449542!3m5!1s0x0:0x0!7e2!8m2!3d50.4087821!4d30.5449435">
             Dragomyrova st.15
           </a>
         </div>
         <div class="contacts__info-section">
           <h5 class="color-secondary">email</h5>
-          <a class="contacts__link" title="email" href="mailto:AverinDc@gmail.com">
+          <a class="contacts__link link-to-cursor" title="email" href="mailto:AverinDc@gmail.com">
             AverinDc@gmail.com
           </a>
         </div>
         <div class="contacts__info-section">
-          <a class="social__link" href="#" title="instagram">instagram</a>
-          <a class="social__link" href="#" title="facebook">facebook</a>
+          <a class="social__link link-to-cursor" href="#" title="instagram">instagram</a>
+          <a class="social__link link-to-cursor" href="#" title="facebook">facebook</a>
         </div>
       </div>
       <div>

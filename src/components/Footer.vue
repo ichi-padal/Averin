@@ -5,9 +5,9 @@
       <router-link class="footer__link" to="/about">about us</router-link>
     </div>
     <div class="footer_col">
-      <a class="footer__link" href="mailto:averindc@gmail.com">averindc@gmail.com</a>
-      <a class="footer__link" href="#">facebook</a>
-      <a class="footer__link" href="#">instagram</a>
+      <a class="footer__link link-to-cursor" href="mailto:averindc@gmail.com">averindc@gmail.com</a>
+      <a class="footer__link link-to-cursor" href="#">facebook</a>
+      <a class="footer__link link-to-cursor" href="#">instagram</a>
     </div>
 
   </footer>

@@ -1,6 +1,6 @@
 <template>
   <div class="section__button">
-    <a class="button button__dark" :href="ButtonTitle.url">{{ButtonTitle.title}}</a>
+    <a class="button button__dark link-to-cursor" :href="ButtonTitle.url">{{ButtonTitle.title}}</a>
   </div>
 </template>
 
