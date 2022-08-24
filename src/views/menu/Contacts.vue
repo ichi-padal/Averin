@@ -33,7 +33,7 @@
           <input class="input__text required phone" type="tel" name="form_phone" required placeholder="Your phone number" pattern="^[0-9-+\s()]*$"  title="Phone number with 7-9 and remaing 9 digit with 0-9">
           <input class="input__text required email" type="email" name="form_email" required placeholder="Your email adress" title="Your email adress">
           <div class="button button__contacts button__white">
-            <input  class="button__input" type="submit" value="Submit">
+            <input  class="button__input link-to-cursor" type="submit" value="Submit">
           </div>
         </form>
       </div>
